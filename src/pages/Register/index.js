@@ -1,8 +1,12 @@
+import React from 'react';
+import FormRegister from '../../components/register/formRegister';
+import '../Login/index.css'
+
 const Register = () => {
     return (
-        <>
-         <h1>Pagina de cadastro</h1>
-        </>
+        <div className="AppLogin">
+            <FormRegister />
+        </div>
       );
 }
 export default Register

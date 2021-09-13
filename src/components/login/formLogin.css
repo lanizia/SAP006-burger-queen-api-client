@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('../../wall.jpg');
+    background: url('../../assets/images/wall.jpg');
     background-color: #080808; 
 }
 
@@ -38,7 +38,7 @@ form .form-inner {
 }
 
 form .form-inner h2 {
-    color: #fada24d4;
+    color: rgb(206 206 206);
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -52,7 +52,7 @@ form .form-inner .form-group {
     margin-bottom: 15px;
 }
 
-.form-inner .form-group label {
+.labels {
     display: block;
     color: rgb(244, 246, 97);
     font-size: 1.2rem;
@@ -81,7 +81,7 @@ form .form-inner .form-group input:focus {
     box-shadow: 3px 3px 3px rgba(212, 212, 212, 0.5);
 } 
 
-form .form-inner input[type="submit"] {
+.btn-submit {
     display: inline-block;
     width: 189px;
     height: 50px;
@@ -97,10 +97,10 @@ form .form-inner input[type="submit"] {
     cursor: pointer;
     margin-top: 20px;
     margin-left: 49px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
-form .form-inner input[type="submit"]:hover {
+.btn-submit:hover {
     background-position: 100% 0%;
 } 
 
@@ -109,4 +109,8 @@ form .form-inner input[type="submit"]:hover {
     height: 150px;
     margin-left: 75px;
     border-radius: 50%;
+}
+
+.txt-paragrafer {
+    color:rgb(244, 246, 97);
 }

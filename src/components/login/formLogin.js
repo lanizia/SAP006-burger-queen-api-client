@@ -1,5 +1,8 @@
 import React, { useState }  from 'react';
-import loginLogo from "../../logocinza.gif";
+import loginLogo from "../../assets/images/logocinza.gif";
+import { Input } from "../input/input.js"
+import { Label } from '../label/label';
+import { Button } from '../button/button';
 import './formLogin.css'
 
 const FormLogin = ({ Login, error }) => {
@@ -20,14 +23,15 @@ const FormLogin = ({ Login, error }) => {
             <h2>Login</h2>
             {(error !=="") ? (<div className="error">{error}</div>) : ""}
             <div className="form-group">
-                <label htmlFor="email">Email:</label>
-                <input type="email" placeholder="exemplo@exemplo.com" name="email" id="email" onChange={e=> setDetails ({...details, email: e.target.value})} value={details.email}/>
+                <Label htmlFor="email" labelInfo="labels">Email:</Label>
+                <Input inputType="email" inputPlaceholder="exemplo@exemplo.com" inputName="email" id="email" inputOnChange={e=> setDetails ({...details, email: e.target.value})} inputValue={details.email}/>
             </div>  
             <div className="form-group">
-                <label htmlFor="password">Password:</label>
-                <input type="password" placeholder="exemplo123" name="password" id="password" onChange={e=> setDetails ({...details, password: e.target.value})} value={details.password} />
+                <Label htmlFor="password" labelInfo="labels">Password:</Label>
+                <Input inputType="password" inputPlaceholder="exemplo123" name="password" id="password" inputOnChange={e=> setDetails ({...details, password: e.target.value})} inputValue={details.password} />
             </div>   
-            <input type="submit" value="LOGIN" />
+            <Button type="submit" value="login" className="btn-submit">LOGIN </Button>
+            <p className="txt-paragrafer"> Ainda não tem cadastro? <a href="#"> Clique aqui</a></p>
         </div>
     </form>
    )
