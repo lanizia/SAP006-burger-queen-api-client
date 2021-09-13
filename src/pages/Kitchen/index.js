@@ -1,8 +1,8 @@
-const homePageKitchen = () => {
+const Kitchen = () => {
     return (
         <>
          <h1>Pedido recebido Aqui</h1>
         </>
       );
 }
-export default homePageKitchen
+export default Kitchen
