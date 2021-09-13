@@ -13,3 +13,16 @@ input, button {
     border: none;
     outline: none;
 }
+
+a {
+    text-decoration: none;
+    color: rgba(212, 212, 212, 0.5);
+}
+
+a:visited {
+    text-decoration: none;
+  } 
+
+a:hover {
+    color: rgb(251 7 7 / 56%);;
+  }

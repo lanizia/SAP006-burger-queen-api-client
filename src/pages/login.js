@@ -3,7 +3,7 @@ import FormLogin from "../components/login/formLogin.js";
 import './index.css'
 
 
-const LoginPage = async () => {
+const LoginPage = () => {
   const adminUser = {
     email: "admin@admin.com",
     password: "admin123" 
