@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FormLogin from "../components/login/formLogin.js";
+import FormLogin from "../../components/login/formLogin.js";
 import './index.css'
 
 
