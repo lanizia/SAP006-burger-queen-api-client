@@ -5,11 +5,12 @@ import {
   Route,
 } from "react-router-dom";
 
-import LoginPage from './pages/login.js';
-import HomePageWaiter from './pages/homePageWaiter.js';
-import HomePageKitchen from './pages/homePageKitchen.js';
-import NewOrderPage from './pages/newOrderPage.js';
-import NotFoundPage from './pages/notFoundPage.js';
+import LoginPage from './pages/Login/index.js';
+import Register from './pages/Register/index.js';
+import Waiter from './pages/Waiter/index.js';
+import Kitchen from './pages/Kitchen/index.js';
+import Orders from './pages/Orders/index.js';
+import NotFound from './pages/NotFound/index.js';
 
 const App = () => {
   return (
@@ -18,17 +19,20 @@ const App = () => {
       <Route exact path='/'>
         <LoginPage />
       </Route>
-      <Route path='/homePageWaiter'>
-        <HomePageWaiter />
+      <Route path='/register'>
+        <Register />
       </Route>
-      <Route path='/homePageKitchen'>
-        <HomePageKitchen />
+      <Route path='/waiter'>
+        <Waiter />
       </Route>
-      <Route path='/newOrderPage'>
-      <NewOrderPage />
+      <Route path='/kitchen'>
+        <Kitchen />
+      </Route>
+      <Route path='/orders'>
+      <Orders />
       </Route>
       <Route>
-        <NotFoundPage />
+        <NotFound />
       </Route>
       </Switch>
     </Router>
