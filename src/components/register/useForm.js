@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react';
 
-
 const UsedForm = (callback, validate) => {
     const [values, setValues] = useState({
+        nome:null,
         email: '',
         password:'',
-        confirmPassword:'',
-        information:''
+        role:'',
+        restaurant:'niqs burger'
     });
     const [errors, setErrors] = useState({})
     const [isSubmitting, setIsSubmitting ] = useState(false)
@@ -19,17 +19,19 @@ const UsedForm = (callback, validate) => {
     };
     const handleSubmit = e => {
         e.preventDefault();
-
+       
         setErrors(validate(values));
         setIsSubmitting(true);
     };
 
     useEffect(() => {
+       
         if(Object.keys(errors).length === 0 && isSubmitting) {
-            callback()
+            callback(values)
         }
     }, 
-    [errors]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [errors,isSubmitting]
     );
 
     return {handleChange, values, handleSubmit, errors}

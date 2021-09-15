@@ -7,7 +7,7 @@ import validate from './validateInfo';
 import '../login/formLogin.css'
 import './dropdown.css'
 
-const FormRegister = ( {submitForm}) => {
+const FormRegister = ({submitForm}) => {
     const { handleChange, values, handleSubmit, errors }
      = UsedForm(
          submitForm, 
@@ -18,7 +18,6 @@ const FormRegister = ( {submitForm}) => {
         const [confirmPassword, setConfirm] = useState("")
         const [kitchen, setKitchen]=useState("kitchen");
         const [waiter, setWaiter]=useState("waiter"); 
-
     function signUp() {
         let item={email, password};
         console.warn(item);
@@ -52,31 +51,18 @@ const FormRegister = ( {submitForm}) => {
                 />
                 <span className="span-space"> {errors.password && <p>{errors.password}</p>} </span>
             </div>   
-            <div className="form-group">
-                <Label htmlFor="password" labelInfo="labels">Confirmar senha:</Label>
-                <Input 
-                    inputType="password" 
-                    inputPlaceholder="exemplo123" 
-                    inputName="confirmPassword" 
-                    id="confirm-password" 
-                    inputValue={values.confirmPassword}
-                    inputOnChange={handleChange}
-                />
-                <div className="content">
-                <span className="span-space"> {errors.confirmPassword && <p>{errors.confirmPassword}</p>} </span>
-                </div>
-            </div> 
+           
             <div className="custom-select"> 
                 <select 
                     id="options-info" 
-                    name="information" 
-                    value={values.information} 
+                    name="role" 
+                    value={values.role} 
                     onChange={handleChange} >
                         <option value=""></option>
                         <option value="waiter"> Salão </option>
                         <option value="kitchen"> Cozinha</option>
                 </select>
-                <span className="span-space"> {errors.information && <p>{errors.information}</p>} </span>
+                <span className="span-space"> {errors.role && <p>{errors.role}</p>} </span>
             </div>
             <Button 
                 type="submit" 

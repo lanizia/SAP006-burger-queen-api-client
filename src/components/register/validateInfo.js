@@ -13,14 +13,8 @@ export default function validateInfo(values) {
         errors.password = 'A senha precisa ter 6 caracteres ou mais'
     }
 
-    if(!values.confirmPassword) {
-        errors.confirmPassword = 'Confirme a sua senha'
-    } else if (values.confirmPassword !== values.password) {
-        errors.confirmPassword = 'As senhas não conferem'
-    }
-
-    if(values.information !=="waiter" && values.information !== "kitchen") {
-        errors.information= "Selecione uma função"
+    if(values.role !=="waiter" && values.role !== "kitchen") {
+        errors.role= "Selecione uma função"
     }
 
     return errors
