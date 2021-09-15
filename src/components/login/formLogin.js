@@ -6,14 +6,11 @@ import { Button } from '../button/button';
 import './formLogin.css'
 
 const FormLogin = ({ Login, error }) => {
-    const [data, setData] = useState({
-        email:"", 
-        password:""
-    });
+    const [data, setData] = useState({email:"", password:""});
 
     const submitHandler = async e => {
         e.preventDefault();
-        await Login(data)
+        return Login(data)
     }
 
     return (
@@ -26,13 +23,25 @@ const FormLogin = ({ Login, error }) => {
             {(error !=="") ? (<div className="error">{error}</div>) : ""}
             <div className="form-group">
                 <Label htmlFor="email" labelInfo="labels">Email:</Label>
-                <Input inputType="email" inputPlaceholder="exemplo@exemplo.com" inputName="email" id="email" inputOnChange={e=> setData ({...data, email: e.target.value})} inputValue={data.email}/>
+                <Input 
+                inputType="email" 
+                inputPlaceholder="exemplo@exemplo.com" 
+                inputName="email" 
+                id="email" 
+                inputOnChange={e=> setData ({...data, email: e.target.value})} 
+                inputValue={data.email}/>
             </div>  
             <div className="form-group">
                 <Label htmlFor="password" labelInfo="labels">Password:</Label>
-                <Input inputType="password" inputPlaceholder="exemplo123" name="password" id="password" inputOnChange={e=> setData ({...data, password: e.target.value})} inputValue={data.password} />
+                <Input 
+                inputType="password" 
+                inputPlaceholder="exemplo123" 
+                inputName="password" 
+                id="password" 
+                inputOnChange={e=> setData ({...data, password: e.target.value})} 
+                inputValue={data.password} />
             </div>   
-            <Button type="submit" value="login" className="btn-submit">LOGIN </Button>
+            <Button type="submit" value="login" className="btn-submit">Login</Button>
             <p className="txt-paragrafer"> Ainda não tem cadastro? <a href="#"> Clique aqui</a></p>
         </div>
     </form>
