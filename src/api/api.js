@@ -4,9 +4,17 @@ export const post = (url, data, token) =>
     fetch(`${BASE_URL}${url}`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            Authorization: token
+            "Content-Type": 'application/json',
+             Authorization: token
         },
         body: JSON.stringify(data)
     })
-    .then((response) => response.json())
+    .then(async (response) => {
+        const json = await response.json();
+
+        if(!response.ok) {
+            throw json;
+        }
+
+        return json;
+    })

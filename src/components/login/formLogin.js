@@ -8,7 +8,7 @@ import './formLogin.css'
 const FormLogin = ({ Login, error }) => {
     const [data, setData] = useState({email:"", password:""});
 
-    const submitHandler = e => {
+    const submitHandler = async e => {
         e.preventDefault();
         return Login(data)
     }
