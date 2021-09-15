@@ -19,17 +19,19 @@ const UsedForm = (callback, validate) => {
     };
     const handleSubmit = e => {
         e.preventDefault();
-
+       
         setErrors(validate(values));
         setIsSubmitting(true);
     };
 
     useEffect(() => {
+       
         if(Object.keys(errors).length === 0 && isSubmitting) {
-            callback()
+            callback(values)
         }
     }, 
-    [errors]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [errors,isSubmitting]
     );
 
     return {handleChange, values, handleSubmit, errors}

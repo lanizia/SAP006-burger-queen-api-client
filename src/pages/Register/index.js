@@ -8,35 +8,28 @@ import '../Login/index.css'
 const Register = () => {
     const [error, setError] = useState("");
     const [user, setUser] = useState("");
-    const [isSubmitted, setIsSubmitted] = useState(false);
     const history = useHistory();
 
     const fetchRegister = async data => {
         try {
-            const result = await post('/user', data);
+            const result = await post('/user', data, false);
             localStorage.setItem('user', JSON.stringify(result));
+            history.push('/')
         } catch(e) {
             console.log(e.code);
             console.log(e.message);
     
-            console.log("Algo deu errado");
+            console.log("Algo deu errado",e);
             setError("Algo deu errado");
         }
     }
 
-    function submitForm() {
-        setIsSubmitted(true)
-    }
-    const forgetData = () => {
-       const storageRemoveData = localStorage.removeItem('user');
-       setUser(storageRemoveData) 
-    }
 
     return (
         <div className="AppLogin">
-            {!isSubmitted ? 
-            <FormRegister submitForm={submitForm}/> : 
-            history.push('/')}
+        
+            <FormRegister submitForm={fetchRegister}/> 
+
         </div>
       );
 }

@@ -18,7 +18,6 @@ const FormRegister = ({submitForm}) => {
         const [confirmPassword, setConfirm] = useState("")
         const [kitchen, setKitchen]=useState("kitchen");
         const [waiter, setWaiter]=useState("waiter"); 
-
     function signUp() {
         let item={email, password};
         console.warn(item);
