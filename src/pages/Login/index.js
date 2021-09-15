@@ -30,8 +30,6 @@ const LoginPage =  () => {
     } catch(e) {
         console.log(e.code);
         console.log(e.message);
-
-        console.log("details do not match");
         setError("details do not match");
     }
   }

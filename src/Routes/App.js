@@ -6,12 +6,12 @@ import {
 } from "react-router-dom";
 
 
-import LoginPage from './pages/Login/index.js';
-import Register from './pages/Register/index.js';
-import Waiter from './pages/Waiter/index.js';
-import Kitchen from './pages/Kitchen/index.js';
-import Orders from './pages/Orders/index.js';
-import NotFound from './pages/NotFound/index.js';
+import LoginPage from '../pages/Login/index.js';
+import Register from '../pages/Register/index.js';
+import Waiter from '../pages/Waiter/index.js';
+import Kitchen from '../pages/Kitchen/index.js';
+import Orders from '../pages/Orders/index.js';
+import NotFound from '../pages/NotFound/index.js';
 
 const App = () => {
   return (
