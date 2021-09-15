@@ -114,3 +114,12 @@ form .form-inner .form-group input:focus {
 .txt-paragrafer {
     color:rgb(244, 246, 97);
 }
+
+.span-space {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.custom-select, .form-group p {
+    color: rgb(251, 7, 7, 56%);
+}
