@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 
+
 import LoginPage from './pages/Login/index.js';
 import Register from './pages/Register/index.js';
 import Waiter from './pages/Waiter/index.js';

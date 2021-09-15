@@ -11,9 +11,9 @@ const FormLogin = ({ Login, error }) => {
         password:""
     });
 
-    const submitHandler = e => {
+    const submitHandler = async e => {
         e.preventDefault();
-        return Login(data)
+        await Login(data)
     }
 
     return (

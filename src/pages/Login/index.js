@@ -1,72 +1,55 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import { post } from '../../api/api.js';
 import FormLogin from "../../components/login/formLogin.js";
 import './index.css'
 
 
 const LoginPage =  () => {
-  // const adminUser = {
-  //   email: "admin@admin.com",
-  //   password: "admin123" 
-  // }
-  /*let adminUser = {email, password};
-  let result = await fetch("https://lab-api-bq.herokuapp.com/auth", {
-    method: 'POST',
-    headers: {
-      "Content-Type":"application/json",
-      "Accept":"application/json"
-    },
-    body:JSON.stringify(adminUser),
-  });
-  result = await result.json(); */
-
-  const [user, setUser] = useState({email: ""});
   const [error, setError] = useState("");
+  const history = useHistory();
+
+  const redirectAfterLogin = (user) => {
+    if(user.role === 'test') {
+        history.push('/orders') 
+      }
+
+      // if(user.role === 'cozinha') {
+      //   history.push('/kitchen')
+      // }
+  }
 
   const Login = async data => {
-    console.log(data)
-
     try {
       const result = await post('/auth', data);
+
       localStorage.setItem('user', JSON.stringify(result));
+            
+      redirectAfterLogin(result);
 
+    } catch(e) {
+        console.log(e.code);
+        console.log(e.message);
 
-      // const usr = JSON.parse(localStorage.getItem('user'));
-      // const token = usr.token
-
-    }catch(error) {
-      console.error()
-
+        console.log("details do not match");
+        setError("details do not match");
     }
-    // if(data.email === adminUser.email && data.password === adminUser.password) {
-    //   console.log("Logged In");
-    //   setUser({
-    //     email: data.email
-    //   })
-    // } else {
-    //   console.log("details do not match");
-    //   setError("details do not match");
-    // }
   }
 
-  const Logout = () => {
-    setUser ({email: ""});
-  }
+  useEffect(() => {
+    const localUser = localStorage.getItem('user');
+
+    if(localUser) {
+      const user = JSON.parse(localUser);
+
+       redirectAfterLogin(user);
+    }
+  }, [])
 
     return (
         <div className="AppLogin">
-          {(user.email !== "") ? (
-            <div className="welcome">
-              <h2> Welcome, <span>{user.email}</span></h2>
-              <button onClick={Logout}>Logout</button>
-            </div>
-          ) : (
-            <FormLogin Login={Login} error={error} />
-          )} 
+          <FormLogin Login={Login} error={error} />
         </div>
       );
 }
 export default LoginPage;
-
-/*
-  */
