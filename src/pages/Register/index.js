@@ -1,20 +1,29 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
+import { post } from '../../api/api.js';
 import FormRegister from '../../components/register/formRegister';
-import FormSuccess from '../../components/register/formSucess';
 import '../Login/index.css'
 
 const Register = () => {
-    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [error, setError] = useState("");
+    const history = useHistory();
 
-    function submitForm() {
-        setIsSubmitted(true)
+    const fetchRegister = async data => {
+        try {
+            const result = await post('/users', data, false);
+            localStorage.setItem('user', JSON.stringify(result));
+            history.push('/')
+            
+        } catch(e) {
+            console.log(e.code);
+            console.log(e.message);
+            setError("Algo deu errado");
+        }
     }
 
     return (
-        <div className="AppLogin">
-            {!isSubmitted ? 
-            <FormRegister submitForm={submitForm} /> : 
-            <FormSuccess/>}
+        <div className="AppLogin">   
+            <FormRegister submitForm={fetchRegister} error={error}/> 
         </div>
       );
 }

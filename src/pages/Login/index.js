@@ -10,13 +10,13 @@ const LoginPage =  () => {
   const history = useHistory();
 
   const redirectAfterLogin = (user) => {
-    if(user.role === 'test') {
+    if(user.role === 'waiter') {
         history.push('/orders') 
       }
 
-      // if(user.role === 'cozinha') {
-      //   history.push('/kitchen')
-      // }
+      if(user.role === 'cozinha') {
+        history.push('/kitchen')
+      }
   }
 
   const Login = async data => {
@@ -42,6 +42,7 @@ const LoginPage =  () => {
 
        redirectAfterLogin(user);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
     return (
