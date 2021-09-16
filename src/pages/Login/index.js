@@ -14,7 +14,7 @@ const LoginPage =  () => {
         history.push('/orders') 
       }
 
-      if(user.role === 'cozinha') {
+      if(user.role === 'kitchen') {
         history.push('/kitchen')
       }
   }

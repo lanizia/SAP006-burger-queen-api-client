@@ -6,6 +6,7 @@ import  UsedForm  from './useForm';
 import validate from './validateInfo';
 import '../login/formLogin.css'
 import './dropdown.css'
+import { Link } from 'react-router-dom';
 
 const FormRegister = ({submitForm}) => {
     const { handleChange, values, handleSubmit, errors }
@@ -70,6 +71,7 @@ const FormRegister = ({submitForm}) => {
                 className="btn-submit">
                     Cadastrar
             </Button>
+            <p className="txt-paragrafer"> Já possui cadastro? <Link to={'/'}> Clique aqui e faça Login</Link></p>
         </div>
     </form>
    )

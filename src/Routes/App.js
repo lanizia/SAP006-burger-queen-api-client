@@ -12,32 +12,23 @@ import Waiter from '../pages/Waiter/index.js';
 import Kitchen from '../pages/Kitchen/index.js';
 import Orders from '../pages/Orders/index.js';
 import NotFound from '../pages/NotFound/index.js';
+import PrivateRoute from './PrivateRoute.js';
 
 const App = () => {
   return (
+
     <Router>
-      <Switch>
-      <Route exact path='/'>
-        <LoginPage />
-      </Route>
-      <Route path='/register'>
-        <Register />
-      </Route>
-      <Route path='/waiter'>
-        <Waiter />
-      </Route>
-      <Route path='/kitchen'>
-        <Kitchen />
-      </Route>
-      <Route path='/orders'>
-      <Orders />
-      </Route>
-      <Route>
-        <NotFound />
-      </Route>
-      </Switch>
+      <div>
+        <Switch>
+          <Route path='/' exact component={LoginPage} />
+          <Route path='/register' component={Register} />
+          <PrivateRoute path='/waiter' component={Waiter} />
+          <PrivateRoute path='/kitchen' component={Kitchen} />
+          <PrivateRoute path='/orders' component={Orders} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
     </Router>
-    
   );
 }
 
