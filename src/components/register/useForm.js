@@ -1,40 +1,40 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 const UsedForm = (callback, validate) => {
-    const [values, setValues] = useState({
-        nome:null,
-        email: '',
-        password:'',
-        role:'',
-        restaurant:'niqs burger'
+  const [values, setValues] = useState({
+    nome: null,
+    email: '',
+    password: '',
+    role: '',
+    restaurant: 'niqs burger',
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
     });
-    const [errors, setErrors] = useState({})
-    const [isSubmitting, setIsSubmitting ] = useState(false)
-    const handleChange = e => {
-        const {name, value} = e.target
-        setValues({
-            ...values, 
-            [name]: value
-        });
-    };
-    const handleSubmit = e => {
-        e.preventDefault();
-       
-        setErrors(validate(values));
-        setIsSubmitting(true);
-    };
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    useEffect(() => {
-       
-        if(Object.keys(errors).length === 0 && isSubmitting) {
-            callback(values)
-        }
-    }, 
+    setErrors(validate(values));
+    setIsSubmitting(true);
+  };
+
+  useEffect(
+    () => {
+      if (Object.keys(errors).length === 0 && isSubmitting) {
+        callback(values);
+      }
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [errors,isSubmitting]
-    );
+    [errors, isSubmitting],
+  );
 
-    return {handleChange, values, handleSubmit, errors}
-}
+  return { handleChange, values, handleSubmit, errors };
+};
 
 export default UsedForm;
