@@ -8,15 +8,15 @@ describe('Register', () => {
 
         it('calls the fetchRegister function', async () => {
             const mockFetchRegister = jest.fn()
-            const {getByText, getByLabelText, getByRole} = render(<Register submitForm={mockFetchRegister}/>)
+            const {getByTestId, getByRole} = render(<Register fetchRegister={mockFetchRegister}/>)
 
            await act(async () => {
-                fireEvent.change(getByText('email *'), {target: {value: 'email@test.com'}})
-                fireEvent.change(getByLabelText('password *'), {target: {value: '1234567'}})
-                fireEvent.change(getByRole('select'), {target: {value: 'waiter'}})
+                fireEvent.change(getByTestId('input-email'), {target: {value: 'email@test.com'}})
+                fireEvent.change(getByTestId('input-password'), {target: {value: '1234567'}})
+                fireEvent.change(getByTestId('garçom'), {target: {value: 'waiter'}})
             })
             await act(async () => {
-                fireEvent.click(getByRole("button"))
+                fireEvent.click(getByRole('button'))
             })
 
             expect(mockFetchRegister).toHaveBeenCalled()

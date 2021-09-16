@@ -63,13 +63,13 @@ const FormRegister = ({ submitForm }) => {
 
         <div className="custom-select">
           <select
-            id="options-info"
+            data-testid="options"
             name="role"
             value={values.role}
             onChange={handleChange}
           >
             <option value=""></option>
-            <option value="waiter"> Salão </option>
+            <option data-testid="garçom" value="waiter"> Salão </option>
             <option value="kitchen"> Cozinha</option>
           </select>
           <span className="span-space">
