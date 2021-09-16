@@ -24,7 +24,7 @@ const FormLogin = ({ Login, error }) => {
             {(error !=="") ? (<div className="error">{error}</div>) : ""}
             <div className="form-group">
                 <Label htmlFor="email" labelInfo="labels">Email:</Label>
-                <Input 
+                <Input
                 inputType="email" 
                 inputPlaceholder="exemplo@exemplo.com" 
                 inputName="email" 

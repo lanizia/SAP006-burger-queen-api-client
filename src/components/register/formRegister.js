@@ -55,6 +55,7 @@ const FormRegister = ({submitForm}) => {
            
             <div className="custom-select"> 
                 <select 
+                    data-testid="select-role"
                     id="options-info" 
                     name="role" 
                     value={values.role} 
