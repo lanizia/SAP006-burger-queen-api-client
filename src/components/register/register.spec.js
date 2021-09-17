@@ -7,6 +7,10 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 
 describe('Register', () => {
+    beforeEach(() => {
+        jest.resetAllMocks();
+      });
+      
     describe('with valid inputs', () => {
 
         it('calls the fetchRegister function', async () => {

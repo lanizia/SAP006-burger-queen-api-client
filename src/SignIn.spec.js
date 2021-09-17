@@ -5,10 +5,14 @@ import { act } from 'react-dom/test-utils'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 describe("SignIn", () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+
   describe("with valid inputs", () => {
     it('calls the onSubmit function', async () => {
       const mockOnSubmit = jest.fn()
-      const { getByTestId, getByRole} = render(<Router><FormLogin Login={mockOnSubmit}/></Router>)
+      const { getByTestId, getByRole } = render(<Router><FormLogin Login={mockOnSubmit}/></Router>)
 
       await act(async () => {
         fireEvent.change(getByTestId("input-email"), {target: {value: "email@test.com"}})
@@ -23,32 +27,22 @@ describe("SignIn", () => {
     })
   })
 
-//   describe("with invalid email", () => {
-//     it("renders the email validation error", async () => {
-//       const {getByLabelText, container} = render(<SignIn />)
+  describe('with empty inputs', () => {
+    it('renders the inputs errors and dont call the fetchRegister function', async () => {
+        const mockOnSubmit = jest.fn()
+        const {getByTestId, getByRole} = render(<Router><FormLogin submitForm={mockOnSubmit}/></Router>)
 
-//       await act(async () => {
-//         const emailInput = getByLabelText("Email Address *")
-//         fireEvent.change(emailInput, {target: {value: "invalid email"}})
-//         fireEvent.blur(emailInput)
-//       })
+        act(() => {
+            fireEvent.change(getByTestId("input-email"), {target: {value: ''}})
+            fireEvent.change(getByTestId("input-password"), {target: {value: ''}})
+        })
 
-//       expect(container.innerHTML).toMatch("Enter a valid email")
-//     })
-//   })
+        act(() => {
+            fireEvent.click(getByRole('button'))
+        })
 
-//   describe("with invalid password", () => {
-//     it("renders the password validation error", async () => {
-//       const {getByLabelText, container} = render(<SignIn />)
+        expect(mockOnSubmit).not.toHaveBeenCalled()
+    })
+})
 
-//       await act(async () => {
-//         const paswordInput = getByLabelText("Password *")
-//         fireEvent.change(paswordInput, {target: {value: "123"}})
-//         fireEvent.blur(paswordInput)
-//       })
-
-//       expect(container.innerHTML).toMatch("Password should be longer than 6 characters")
-
-//     })
-//   })
  })
