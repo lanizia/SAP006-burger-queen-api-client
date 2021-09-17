@@ -1,13 +1,13 @@
 import {useState} from 'react';
 
 const UsedForm = (callback, validate) => {
-    const [values, setValues] = useState({
-        nome:null,
-        email: '',
-        password:'',
-        role:'',
-        restaurant:'niqs burger'
-    });
+  const [values, setValues] = useState({
+    nome: null,
+    email: '',
+    password: '',
+    role: '',
+    restaurant: 'niqs burger',
+  });
     const [errors, setErrors] = useState({})
     
     const handleChange = e => {
@@ -29,7 +29,7 @@ const UsedForm = (callback, validate) => {
         }
     };
 
-    return {handleChange, values, handleSubmit, errors}
-}
+  return { handleChange, values, handleSubmit, errors };
+};
 
 export default UsedForm;
