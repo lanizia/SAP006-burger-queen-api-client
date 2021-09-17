@@ -14,7 +14,7 @@ const LoginPage =  () => {
         history.push('/orders') 
       }
 
-      if(user.role === 'cozinha') {
+      if(user.role === 'kitchen') {
         history.push('/kitchen')
       }
   }
@@ -30,8 +30,6 @@ const LoginPage =  () => {
     } catch(e) {
         console.log(e.code);
         console.log(e.message);
-
-        console.log("details do not match");
         setError("details do not match");
     }
   }

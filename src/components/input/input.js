@@ -19,8 +19,8 @@ export function Input ({
             className={inputClass}
             onChange={inputOnChange}
             name={inputName}
-            id={id}
-            data-testid={`input-${id}`} />
+            id={id} 
+            data-testid={`input-${id}`}/>
     )
     
 }

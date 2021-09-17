@@ -4,6 +4,7 @@ import { Input } from "../input/input.js"
 import { Label } from '../label/label';
 import { Button } from '../button/button';
 import './formLogin.css'
+import { Link } from 'react-router-dom';
 
 const FormLogin = ({ Login, error }) => {
     const [data, setData] = useState({email:"", password:""});
@@ -23,7 +24,7 @@ const FormLogin = ({ Login, error }) => {
             {(error !=="") ? (<div className="error">{error}</div>) : ""}
             <div className="form-group">
                 <Label htmlFor="email" labelInfo="labels">Email:</Label>
-                <Input 
+                <Input
                 inputType="email" 
                 inputPlaceholder="exemplo@exemplo.com" 
                 inputName="email" 
@@ -42,7 +43,7 @@ const FormLogin = ({ Login, error }) => {
                 inputValue={data.password} />
             </div>   
             <Button type="submit" value="login" className="btn-submit">Login</Button>
-            <p className="txt-paragrafer"> Ainda não tem cadastro? <a href="#"> Clique aqui</a></p>
+            <p className="txt-paragrafer"> Ainda não tem cadastro? <Link to={'/register'}> Clique aqui</Link></p>
         </div>
     </form>
    )
