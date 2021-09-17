@@ -1,0 +1,8 @@
+.ProductsPage {
+    display: flex;
+}
+
+.ProductsPage-list {
+    width: 70%;
+    height: 100%;
+}
