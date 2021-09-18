@@ -1,7 +1,19 @@
+import {
+    getUserToken
+} from "../services/auth";
+
 const BASE_URL = 'https://lab-api-bq.herokuapp.com'
 
-export const post = (url, data, token) => {
-    return fetch(`${BASE_URL}${url}`, {
+const parseResponse = async (response) => {
+        const json = await response.json();
+        if (!response.ok) {
+            throw json;
+        }
+        return json;
+    }
+
+export const post = (url, data, token) =>
+    fetch(`${BASE_URL}${url}`, {
         method: 'POST',
         headers: {
             "Content-Type": 'application/json',
@@ -9,11 +21,15 @@ export const post = (url, data, token) => {
         },
         body: JSON.stringify(data)
     })
-    .then(async (response) => {
-        const json = await response.json();
-        if(!response.ok) {
-            throw json;
-        }
-        return json;
-    
-})}
+    .then(parseResponse) 
+  
+
+export const get = (url) =>
+    fetch(`${BASE_URL}${url}`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": 'application/json',
+            Authorization: getUserToken()
+        },
+    })
+    .then(parseResponse)
