@@ -1,23 +1,27 @@
-import {ProductList} from '../../components/productsList/index.js';
-import {Cart} from '../../components/cart/index'
+import { ProductList } from '../../components/productsList/index.js';
+import { Cart } from '../../components/cart/index';
 import './style.css';
-
+import Navbar from '../../components/navbar/navbar.js';
 
 const Orders = () => {
-    return (
-        <div className="ProductsPage">
-
-          <div className="ProductsPage-list">
-              <h1>Menu</h1>
-              <ProductList/>
-          </div>
-
-          <div className="ProductsPage-cart">
-                <Cart />
-            </div>
-
-         
+  return (
+    <>
+      <header className="container-nav">
+        <div className="header">
+          <Navbar />
         </div>
-      );
-}
-export default Orders
+      </header>
+      <section className="input-client-name"></section>
+      <div className="ProductsPage">
+        <div className="ProductsPage-list">
+          <ProductList />
+        </div>
+
+        <div className="ProductsPage-cart">
+          <Cart />
+        </div>
+      </div>
+    </>
+  );
+};
+export default Orders;
