@@ -1,0 +1,9 @@
+.btn-menu-breakfast,
+.btn-other-menu {
+  width: 232px;
+  height: 47px;
+  border-radius: 6px;
+  background: #1d1b1b;
+  border-top: 4px solid #ffc107;
+  color: #ffff;
+}

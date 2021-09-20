@@ -5,7 +5,7 @@ import { Button } from '../button/button';
 import  UsedForm  from './useForm';
 import validate from './validateInfo';
 import '../login/formLogin.css'
-import './dropdown.css'
+//import './dropdown.css'
 import { Link } from 'react-router-dom';
 
 const FormRegister = ({submitForm}) => {
@@ -14,15 +14,6 @@ const FormRegister = ({submitForm}) => {
          submitForm, 
          validate
     );
-    /* const [email, setEmail] = useState("");
-        const [password, setPassword] = useState("");
-        const [confirmPassword, setConfirm] = useState("")
-        const [kitchen, setKitchen]=useState("kitchen");
-        const [waiter, setWaiter]=useState("waiter"); 
-    function signUp() {
-        let item={email, password};
-        console.warn(item);
-    }*/
 
     return (
     <form onSubmit={handleSubmit}>
