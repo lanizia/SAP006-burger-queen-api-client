@@ -24,11 +24,21 @@
 .input-client-name {
   display: flex;
   align-items: center;
-  justify-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100vw;
   height: 20vh;
   background: #1d1b1b;
+  color: #ffffff;
+}
+
+.btn-menu-content {
+  height: 10vh;
+  display: flex;
+  align-items: flex-start;
+  color: #ffffff;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
 }
 
 .father {

@@ -52,6 +52,7 @@
 
 .nav-item a:hover {
   background: #ffc107;
+  color: #0e0e0e;
 }
 
 .nav-item a span {
