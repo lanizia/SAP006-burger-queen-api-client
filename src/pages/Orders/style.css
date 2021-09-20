@@ -1,8 +1,36 @@
 .ProductsPage {
-    display: flex;
+  display: flex;
+  margin: 1em 1em 2em 2em;
+  justify-content: space-around;
+  align-items: baseline;
+  background: #1d1b1b;
 }
 
+/*.ProductsPage {
+  padding: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  justify-content: space-evenly;
+  min-height: 100vh;
+}*/
+
 .ProductsPage-list {
-    width: 70%;
-    height: 100%;
+  display: flex;
+  width: 70%;
+  height: 100%;
+}
+
+.input-client-name {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 20vh;
+  background: #1d1b1b;
+}
+
+.father {
+  background: #1d1b1b;
 }

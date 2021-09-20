@@ -1,0 +1,98 @@
+.ProductsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background: #1d1b1b;
+}
+
+.ProductsList li {
+  display: flex;
+  color: #ffffff;
+  font-size: 1.2rem;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  width: 200px;
+  height: 258px;
+  background: #252522;
+  padding: 30px;
+  margin: 20px;
+  border-top: 5px solid #ffc107;
+  border-radius: 30px;
+  box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+}
+
+.ProductsList img {
+  width: 80px;
+  height: 51px;
+  border-radius: 50%;
+  box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+}
+
+.ProductsPage-cart {
+  color: #ffffff;
+  font-size: 1.2rem;
+  display: flex;
+  min-width: 255px;
+  background: #252522;
+  padding: 30px;
+  margin: 20px;
+  border-top: 5px solid #ffc107;
+  border-radius: 30px;
+  box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+}
+
+.btn-adicionar {
+  margin-top: 23px;
+  width: 145px;
+  height: 30px;
+  /* padding: 12px 17px; */
+  border-radius: 48px;
+  background-image: linear-gradient(
+    to right,
+    #ffc107 50%,
+    #ffc107 50%,
+    #eee45a
+  );
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+}
+
+button {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 23px;
+  width: 120px;
+  height: 30px;
+  /* padding: 12px 17px; */
+  border-radius: 48px;
+  background-image: linear-gradient(
+    to right,
+    #ffc107 50%,
+    #ffc107 50%,
+    #eee45a
+  );
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+}

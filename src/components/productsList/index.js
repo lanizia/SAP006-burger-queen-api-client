@@ -1,9 +1,8 @@
-
 import {useEffect, useState} from 'react';
 import {formatMoney} from '../../services/formatMoney'; 
 import { Button } from '../button/button';
 import { get } from '../../api/api'
-import './style.css';
+import './productsList.css';
 
 export const ProductList = ({ addToCart }) => {
     const [products, setProducts] = useState([]);
