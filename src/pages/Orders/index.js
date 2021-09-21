@@ -4,7 +4,6 @@ import { post } from '../../api/api';
 import { useState, useEffect } from 'react';
 import Navbar from '../../components/navbar/navbar.js';
 import ClientName from '../../components/nameClient/nameClient.js';
-import MenuBtn from '../../components/menuBtn/menuBtn.js';
 import './style.css';
 
 const Orders = () => {
@@ -40,9 +39,6 @@ const Orders = () => {
           <Navbar />
         </div>
       </header>
-      <section className="btn-menu-content">
-        <MenuBtn />
-      </section>
 
       <main className="ProductsPage">
         <div className="ProductsPage-list">

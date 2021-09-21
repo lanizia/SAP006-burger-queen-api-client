@@ -97,3 +97,13 @@ button {
   -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
   -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
 }
+
+.btn-menu-content {
+  height: 10vh;
+  display: flex;
+  align-items: flex-start;
+  color: #ffffff;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}

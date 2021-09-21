@@ -32,13 +32,13 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className='navbar'>
         <Link to={'/waiter'}>
-          <img src={loginLogo} alt="logo" />
+          <img src={loginLogo} alt='logo' />
         </Link>
-        <h2 className="navbar-logo">Niq's Burger</h2>
+        <h2 className='navbar-logo'>Niq's Burger</h2>
         {!mobile && (
-          <ul className="nav-items">
+          <ul className='nav-items'>
             {navItems.map((item) => {
               return (
                 <li key={item.id} className={item.nName}>
@@ -52,15 +52,15 @@ function Navbar() {
           </ul>
         )}
         {mobile && (
-          <div className="sidebar-toggle">
+          <div className='sidebar-toggle'>
             {sidebar ? (
               <Icons.FaTimes
-                className="sidebar-toggle-logo"
+                className='sidebar-toggle-logo'
                 onClick={() => setSidebar(!sidebar)}
               />
             ) : (
               <Icons.FaBars
-                className="sidebar-toggle-logo"
+                className='sidebar-toggle-logo'
                 onClick={() => setSidebar(!sidebar)}
               />
             )}
@@ -68,7 +68,7 @@ function Navbar() {
         )}
       </nav>
       <div className={sidebar ? 'sidebar active' : 'sidebar'}>
-        <ul className="sidebar-items">
+        <ul className='sidebar-items'>
           {navItems.map((item) => {
             return (
               <li key={item.id} className={item.sName}>

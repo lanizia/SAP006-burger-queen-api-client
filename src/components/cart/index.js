@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {formatMoney} from '../../services/formatMoney';
+import { Button } from '../button/button';
 
 
 const Total = ({ cartItems }) => {
@@ -10,7 +11,7 @@ const Total = ({ cartItems }) => {
         setTotal(newTotal)
     }, [cartItems]);
 
-    return <div className="CartTotal">
+    return <div className='CartTotal'>
         Total: {formatMoney(total)}
     </div>
 }
@@ -22,14 +23,14 @@ const CartItems = ({ cartItems, removeFromCart }) => {
         {cartItems.map((item, index) =>
             <li key={`cart-${index}`}>
                 <b>{item.name}</b> - {formatMoney(item.price)}
-                <button type="button" onClick={() => removeFromCart(index)}>remover</button>
+                <Button type="button" onClick={() => removeFromCart(index)}>remover</Button>
             </li>)}
         </ul>
     </>;
 }
 
 const CartEmptyState = () =>
-    <p className="empty-state">Nenhum item no carrinho</p>
+    <p className='empty-state'>Nenhum item no carrinho</p>
 
 export const Cart = ({ cartItems, removeFromCart }) => {
     return <div className="Cart">
