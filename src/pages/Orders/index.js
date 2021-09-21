@@ -1,50 +1,67 @@
-import {ProductList} from '../../components/productsList/index.js';
-import {Cart} from '../../components/cart/index';
-import {useState} from 'react';
+import { ProductList } from '../../components/productsList/index.js';
+import { Cart } from '../../components/cart/index';
+import { post } from '../../api/api';
+import { useState, useEffect } from 'react';
 import Navbar from '../../components/navbar/navbar.js';
 import ClientName from '../../components/nameClient/nameClient.js';
-import  MenuBtn from '../../components/menuBtn/menuBtn.js';
+import MenuBtn from '../../components/menuBtn/menuBtn.js';
 import './style.css';
 
-
 const Orders = () => {
+  const [data, setData] = useState({ client: '', table: '' });
 
-    const [cartItems, setCartItems] = useState([]);
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    return ClientName(data);
+  };
 
-    const addToCart = (product) => {
-        const newCartItems = [...cartItems, product]
-        setCartItems(newCartItems);
-    }
+  useEffect(() => {
+    post('/orders').then(setData);
+  }, []);
 
-    const removeFromCart = (indexToBeRemoved) => {
-        const newCartItems = cartItems.filter((_, index) => indexToBeRemoved !== index)
-        setCartItems(newCartItems);
-    }
+  const [cartItems, setCartItems] = useState([]);
 
-    return (
-      <>
+  const addToCart = (product) => {
+    const newCartItems = [...cartItems, product];
+    setCartItems(newCartItems);
+  };
+
+  const removeFromCart = (indexToBeRemoved) => {
+    const newCartItems = cartItems.filter(
+      (_, index) => indexToBeRemoved !== index,
+    );
+    setCartItems(newCartItems);
+  };
+
+  return (
+    <>
       <header className="container-nav">
         <div className="header">
           <Navbar />
         </div>
       </header>
-      <section className="input-client-name">
-        <ClientName />
-      </section>
       <section className="btn-menu-content">
-        < MenuBtn />
+        <MenuBtn />
       </section>
 
-        <div className="ProductsPage">
-          <div className="ProductsPage-list">
-              <ProductList addToCart={addToCart} />
+      <main className="ProductsPage">
+        <div className="ProductsPage-list">
+          <ProductList addToCart={addToCart} />
+        </div>
+
+        <section className="ProductsPage-cart">
+          <div className="container-input-client">
+            <ClientName
+              data={data}
+              setData={setData}
+              submitHandler={submitHandler}
+            />
           </div>
 
-          <div className="ProductsPage-cart">
-                <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
-            </div>         
-        </div>
-        </>
-      );
-}
-export default Orders
+          <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+        </section>
+      </main>
+    </>
+  );
+};
+export default Orders;

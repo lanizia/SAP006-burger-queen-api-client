@@ -42,7 +42,8 @@
   color: #ffffff;
   font-size: 1.2rem;
   display: flex;
-  min-width: 255px;
+  flex-direction: column;
+  min-width: 400px;
   background: #252522;
   padding: 30px;
   margin: 20px;
