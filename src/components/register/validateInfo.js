@@ -2,9 +2,9 @@ export default function validateInfo(values) {
     let errors = {};
 
     if(!values.email) {
-        errors.email = "Email required"
+        errors.email = 'Email required'
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-        errors.email = "Endereço de email invalido"
+        errors.email = 'Endereço de email invalido'
     }
 
     if(!values.password) {
@@ -13,8 +13,8 @@ export default function validateInfo(values) {
         errors.password = 'A senha precisa ter 6 caracteres ou mais'
     }
 
-    if(values.role !=="waiter" && values.role !== "kitchen") {
-        errors.role= "Selecione uma função"
+    if(values.role !=='waiter' && values.role !== 'kitchen') {
+        errors.role= 'Selecione uma função'
     }
 
     return errors

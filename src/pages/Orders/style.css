@@ -3,6 +3,21 @@
 }
 
 .ProductsPage-list {
-    width: 70%;
-    height: 100%;
+  display: flex;
+  width: 70%;
+  height: 100%;
+}
+
+.input-client-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 20vh;
+  background: #1d1b1b;
+  color: #ffffff;
+}
+
+.father {
+  background: #1d1b1b;
 }

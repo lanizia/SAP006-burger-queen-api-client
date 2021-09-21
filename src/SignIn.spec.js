@@ -4,23 +4,23 @@ import { render, fireEvent } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-describe("SignIn", () => {
+describe('SignIn', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
 
-  describe("with valid inputs", () => {
+  describe('with valid inputs', () => {
     it('calls the onSubmit function', async () => {
       const mockOnSubmit = jest.fn()
       const { getByTestId, getByRole } = render(<Router><FormLogin Login={mockOnSubmit}/></Router>)
 
       await act(async () => {
-        fireEvent.change(getByTestId("input-email"), {target: {value: "email@test.com"}})
-        fireEvent.change(getByTestId("input-password"), {target: {value: "1234567"}})
+        fireEvent.change(getByTestId('input-email'), {target: {value: 'email@test.com'}})
+        fireEvent.change(getByTestId('input-password'), {target: {value: '1234567'}})
       })
 
       await act(async () => {
-        fireEvent.click(getByRole("button"))
+        fireEvent.click(getByRole('button'))
       })
 
       expect(mockOnSubmit).toHaveBeenCalled()
@@ -33,8 +33,8 @@ describe("SignIn", () => {
         const {getByTestId, getByRole} = render(<Router><FormLogin submitForm={mockOnSubmit}/></Router>)
 
         act(() => {
-            fireEvent.change(getByTestId("input-email"), {target: {value: ''}})
-            fireEvent.change(getByTestId("input-password"), {target: {value: ''}})
+            fireEvent.change(getByTestId('input-email'), {target: {value: ''}})
+            fireEvent.change(getByTestId('input-password'), {target: {value: ''}})
         })
 
         act(() => {

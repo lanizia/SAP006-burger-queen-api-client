@@ -1,12 +1,15 @@
 import {ProductList} from '../../components/productsList/index.js';
 import {Cart} from '../../components/cart/index'
 import {useState} from 'react';
+import Navbar from '../../components/navbar/navbar.js';
+import ClientName from '../../components/nameClient/nameClient.js';
 import './style.css';
 
 
 const Orders = () => {
 
     const [cartItems, setCartItems] = useState([]);
+    
 
     const addToCart = (product) => {
         const newCartItems = [...cartItems, product]
@@ -19,16 +22,25 @@ const Orders = () => {
     }
 
     return (
-        <div className="ProductsPage">
-          <div className="ProductsPage-list">
-              <h1>Menu</h1>
+      <>
+      <header className='container-nav'>
+        <div className='header'>
+          <Navbar />
+        </div>
+      </header>
+      <section className='input-client-name'>
+        <ClientName />
+      </section>
+        <div className='ProductsPage'>
+          <div className='ProductsPage-list'>
               <ProductList addToCart={addToCart} />
           </div>
 
-          <div className="ProductsPage-cart">
+          <div className='ProductsPage-cart'>
                 <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
             </div>         
         </div>
+        </>
       );
 }
 export default Orders
