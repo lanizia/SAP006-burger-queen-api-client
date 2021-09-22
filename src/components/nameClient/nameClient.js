@@ -1,6 +1,5 @@
 import { Input } from '../input/input.js';
 import { Label } from '../label/label';
-import { Button } from '../button/button';
 import './name-client.css'
 //import { useState } from 'react/cjs/react.development';
 

@@ -1,7 +1,7 @@
 import { ProductList } from '../../components/productsList/index.js';
 import { Cart } from '../../components/cart/index';
 import { post } from '../../api/api';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import Navbar from '../../components/navbar/navbar.js';
 import ClientName from '../../components/nameClient/nameClient.js';
 import './style.css';
