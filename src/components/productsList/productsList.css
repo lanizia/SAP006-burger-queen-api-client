@@ -38,11 +38,17 @@
   -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
 }
 
+.ProductsList b {
+  padding: 5px;
+  margin: 5px 0;
+}
+
 .ProductsPage-cart {
   color: #ffffff;
   font-size: 1.2rem;
   display: flex;
-  min-width: 255px;
+  flex-direction: column;
+  width: 400px;
   background: #252522;
   padding: 30px;
   margin: 20px;
@@ -72,37 +78,4 @@
   box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
   -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
   -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
-}
-
-button {
-  display: block;
-  margin-top: 8px;
-  margin-bottom: 23px;
-  width: 120px;
-  height: 30px;
-  /* padding: 12px 17px; */
-  border-radius: 48px;
-  background-image: linear-gradient(
-    to right,
-    #ffc107 50%,
-    #ffc107 50%,
-    #eee45a
-  );
-  color: #000;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
-  -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
-  -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
-}
-
-.btn-menu-content {
-  height: 10vh;
-  display: flex;
-  align-items: flex-start;
-  color: #ffffff;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
 }
