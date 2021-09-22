@@ -6,7 +6,7 @@ const Total = ({ cartItems }) => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    const newTotal = cartItems.reduce((acc, cur) => acc + cur.price, 0);
+    const newTotal = cartItems.reduce((acc, cur) => acc + (cur.price * cur.qtd), 0);
     setTotal(newTotal);
   }, [cartItems]);
 
@@ -21,6 +21,7 @@ const CartItems = ({ cartItems, removeFromCart }) => {
         {cartItems.map((item, index) => (
           <li key={`cart-${index}`}>
             <b>
+              {item.qtd}x -
               {item.name}
               {item.flavor ? ` tipo ${item.flavor}` : null}
               {item.complement ? ` com ${item.complement}` : null}-{' '}
@@ -43,11 +44,10 @@ const CartEmptyState = () => (
 export const Cart = ({ cartItems, removeFromCart }) => {
   return (
     <div className="Cart">
-      {cartItems.length === 0 ? (
-        <CartEmptyState />
-      ) : (
-        <CartItems cartItems={cartItems} removeFromCart={removeFromCart} />
+      {cartItems.length === 0
+       ? ( <CartEmptyState />)
+        : (<CartItems cartItems={cartItems} removeFromCart={removeFromCart} />
       )}
     </div>
   );
-};
+}; 

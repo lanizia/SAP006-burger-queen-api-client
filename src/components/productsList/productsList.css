@@ -18,7 +18,7 @@
   align-items: center;
   align-content: center;
   width: 200px;
-  height: 258px;
+  height: 360px;
   background: #252522;
   padding: 30px;
   margin: 20px;
@@ -30,8 +30,8 @@
 }
 
 .ProductsList img {
-  width: 80px;
-  height: 51px;
+  width: 95px;
+  height: 118px;
   border-radius: 50%;
   box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
   -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
@@ -40,6 +40,8 @@
 
 .ProductsList b {
   padding: 5px;
+  width: 140px;
+  height: 140px;
   margin: 5px 0;
 }
 
