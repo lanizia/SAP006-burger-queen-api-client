@@ -18,7 +18,7 @@
   align-items: center;
   align-content: center;
   width: 200px;
-  height: 258px;
+  height: 360px;
   background: #252522;
   padding: 30px;
   margin: 20px;
@@ -40,6 +40,8 @@
 
 .ProductsList b {
   padding: 5px;
+  width: 140px;
+  height: 140px;
   margin: 5px 0;
 }
 
