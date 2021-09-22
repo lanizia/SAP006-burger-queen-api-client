@@ -22,7 +22,11 @@ export const ProductList = ({ addToCart }) => {
     <ul className='ProductsList'>
         {products.filter(filterByMenuType).map(product => 
             <li key={`product-${product.id}`}> 
-                <b>{product.name}</b>
+                <b>
+                    {product.name}
+                    {product.flavor ? ` tipo ${product.flavor}` : null}
+                    {product.complement ? ` com ${product.complement}` : null}
+                </b>
                 <img src={product.image} alt={product.name}></img>
                 <p>{formatMoney(product.price)}</p>
                 <Button type='button' value= 'adicionar' className='btn-adicionar' onClick={() => addToCart(product)}>Adicionar</Button>

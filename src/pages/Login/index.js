@@ -30,7 +30,7 @@ const LoginPage =  () => {
     } catch(e) {
         console.log(e.code);
         console.log(e.message);
-        setError('details do not match');
+        setError('E-mail ou senha não preenchidos corretamente');
     }
   }
 
