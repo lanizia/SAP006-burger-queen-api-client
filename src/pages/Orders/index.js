@@ -1,7 +1,7 @@
 import { ProductList } from '../../components/productsList/index.js';
 import { Cart } from '../../components/cart/index';
 import { post } from '../../api/api';
-import { useState} from 'react';
+import { useState } from 'react';
 import Navbar from '../../components/navbar/navbar.js';
 import ClientName from '../../components/nameClient/nameClient.js';
 import './style.css';
@@ -14,25 +14,48 @@ const Orders = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     console.log(data);
-    post('/orders', {
+    await post('/orders', {
       client: data.client,
       table: data.table,
-      products: [{
-        id: 123,
-        qtd: 1
-      }]
+      products: cartItems
     })
   };
 
+
   const addToCart = (product) => {
-    const newCartItems = [...cartItems, product];
+    const foundIndex = cartItems.findIndex(item => item.id === product.id);
+    const alreadyExists = foundIndex !== -1;
+
+    let newCartItems;
+
+    if(alreadyExists) {
+      const found = cartItems[foundIndex];
+      found.qtd += 1; 
+      newCartItems = [...cartItems];
+    } else {
+      newCartItems = [...cartItems, {
+         ...product,
+         qtd: 1
+      }];
+    }
+
     setCartItems(newCartItems);
   };
 
   const removeFromCart = (indexToBeRemoved) => {
-    const newCartItems = cartItems.filter(
-      (_, index) => indexToBeRemoved !== index,
-    );
+    const product = cartItems[indexToBeRemoved];
+
+    let newCartItems;
+
+    if(product.qtd === 1) {
+      newCartItems = cartItems.filter(
+        (_, index) => indexToBeRemoved !== index,
+      );
+    } else {
+      product.qtd -= 1;
+      newCartItems = [...cartItems];
+    }
+    
     setCartItems(newCartItems);
   };
 
@@ -70,4 +93,4 @@ const Orders = () => {
     </>
   );
 };
-export default Orders;
+export default Orders; 
