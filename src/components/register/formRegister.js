@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from "../input/input.js"
+import { Input } from '../input/input.js'
 import { Label } from '../label/label';
 import { Button } from '../button/button';
 import  UsedForm  from './useForm';
@@ -46,6 +46,7 @@ const FormRegister = ({submitForm}) => {
            
             <div className='custom-select'> 
                 <select 
+                    className='select-input-styled'
                     data-testid='select-role'
                     id='options-info' 
                     name='role' 

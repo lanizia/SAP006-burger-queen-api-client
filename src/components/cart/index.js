@@ -33,8 +33,7 @@ const CartEmptyState = () =>
     <p className='empty-state'>Nenhum item no carrinho</p>
 
 export const Cart = ({ cartItems, removeFromCart }) => {
-    return <div className='Cart'>
-        <h2>Carrinho</h2>
+    return <div className="Cart">
         {cartItems.length === 0
             ? <CartEmptyState />
             : <CartItems cartItems={cartItems} removeFromCart={removeFromCart} />}

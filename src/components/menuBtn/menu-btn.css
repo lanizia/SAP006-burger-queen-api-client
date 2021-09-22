@@ -1,3 +1,13 @@
+.btn-menu-content {
+  /* height: 10vh; */
+  display: flex;
+  align-items: flex-start;
+  color: #ffffff;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
 .btn-menu-breakfast,
 .btn-other-menu {
   width: 232px;
@@ -6,4 +16,5 @@
   background: #1d1b1b;
   border-top: 4px solid #ffc107;
   color: #ffff;
+  margin-left: 78px;
 }
