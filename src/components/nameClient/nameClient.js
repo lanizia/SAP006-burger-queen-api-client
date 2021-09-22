@@ -4,7 +4,7 @@ import { Button } from '../button/button';
 import './name-client.css'
 //import { useState } from 'react/cjs/react.development';
 
-const ClientName = ({data, setData, submitHandler}) => {
+const ClientName = ({data, setData}) => {
  
     return (
         <>
@@ -32,13 +32,7 @@ const ClientName = ({data, setData, submitHandler}) => {
         inputOnChange={(e) => setData({ ...data, table: e.target.value })}
         inputValue={data.table}
          />
-        <Button 
-        type='submit'
-        value='client-name'
-        className='btn-client'
-        onClick={()=> {submitHandler(data)}}>
-            Enviar
-        </Button>
+        
         </>
     )
 }
