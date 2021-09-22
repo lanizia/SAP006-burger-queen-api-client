@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { post } from '../../api/api.js';
-import FormLogin from "../../components/login/formLogin.js";
+import FormLogin from '../../components/login/formLogin.js';
 import './index.css'
 
 
 const LoginPage =  () => {
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const history = useHistory();
 
   const redirectAfterLogin = (user) => {
@@ -30,7 +30,7 @@ const LoginPage =  () => {
     } catch(e) {
         console.log(e.code);
         console.log(e.message);
-        setError("details do not match");
+        setError('details do not match');
     }
   }
 
@@ -46,7 +46,7 @@ const LoginPage =  () => {
   }, [])
 
     return (
-        <div className="AppLogin">
+        <div className='AppLogin'>
           <FormLogin Login={Login} error={error} />
         </div>
       );

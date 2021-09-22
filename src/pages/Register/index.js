@@ -21,7 +21,7 @@ const Register = () => {
   };
 
   return (
-    <div className="AppLogin">
+    <div className='AppLogin'>
       <FormRegister submitForm={fetchRegister} error={error} />
     </div>
   );

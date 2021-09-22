@@ -6,19 +6,15 @@
   background: #1d1b1b;
 }
 
-/*.ProductsPage {
-  padding: 0.8rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: start;
-  justify-content: space-evenly;
-  min-height: 100vh;
-}*/
-
 .ProductsPage-list {
   display: flex;
   width: 70%;
   height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .input-client-name {
@@ -31,16 +27,91 @@
   color: #ffffff;
 }
 
-.btn-menu-content {
-  height: 10vh;
-  display: flex;
-  align-items: flex-start;
-  color: #ffffff;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
+button {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 23px;
+  width: 120px;
+  height: 30px;
+  /* padding: 12px 17px; */
+  border-radius: 48px;
+  background-image: linear-gradient(
+    to right,
+    #ffc107 50%,
+    #ffc107 50%,
+    #eee45a
+  );
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
 }
 
-.father {
-  background: #1d1b1b;
+/* Responvidade */
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .ProductsPage-list {
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .ProductsPage-cart {
+    width: 300px;
+  }
+
+  .ProductsList li {
+    width: 159px;
+    height: 281px;
+    margin: 15px 9px;
+  }
+
+  .btn-adicionar {
+    width: 108px;
+  }
+
+  .btn-menu-content {
+    display: flex;
+  }
+
+  .btn-menu-breakfast,
+  .btn-other-menu {
+    width: 124px;
+    padding: 13px;
+    height: 70px;
+    margin: 20px 16px;
+  }
+
+  .ProductsList img {
+    margin: 5px 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  .ProductsPage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .ProductsPage-cart {
+    width: 250px;
+  }
+
+  .btn-menu-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .btn-menu-breakfast,
+  .btn-other-menu {
+    margin-left: 0;
+  }
 }

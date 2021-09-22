@@ -1,17 +1,30 @@
+.container-input-client {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.content-label {
+  display: flex;
+  flex-direction: column;
+}
+
 .label-name {
-  font-size: 1.3rem;
-  font-weight: 700;
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .client-name-input {
   background-color: #1d1b1b;
-  border: 3px solid #ffc107;
+  border: 2px solid #ffc107;
   font-size: 1rem;
   color: #ffffff;
-  width: auto;
-  height: 48px;
+  /* width: 46px; */
+  height: 41px;
   padding: 0 20px;
-  margin: 15px;
+  margin: 15px 0;
   border-radius: 32px;
 }
 .client-name-input:focus {
