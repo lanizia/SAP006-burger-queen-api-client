@@ -5,20 +5,24 @@ import { useState, useEffect } from 'react';
 import Navbar from '../../components/navbar/navbar.js';
 import ClientName from '../../components/nameClient/nameClient.js';
 import './style.css';
+import { Button } from '../../components/button/button.js';
 
 const Orders = () => {
+  const [cartItems, setCartItems] = useState([]);
   const [data, setData] = useState({ client: '', table: '' });
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    return ClientName(data);
+    console.log(data);
+    post('/orders', {
+      client: data.client,
+      table: data.table,
+      products: [{
+        id: 123,
+        qtd: 1
+      }]
+    })
   };
-
-  useEffect(() => {
-    post('/orders').then(setData);
-  }, []);
-
-  const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
     const newCartItems = [...cartItems, product];
@@ -50,8 +54,14 @@ const Orders = () => {
             <ClientName
               data={data}
               setData={setData}
-              submitHandler={submitHandler}
             />
+            <Button 
+              type='submit'
+              value='client-name'
+              className='btn-client'
+              onClick={submitHandler}>
+                  Enviar
+            </Button>
           </div>
 
           <Cart cartItems={cartItems} removeFromCart={removeFromCart} />

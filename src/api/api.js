@@ -12,12 +12,12 @@ const parseResponse = async (response) => {
         return json;
     }
 
-export const post = (url, data, token) =>
+export const post = (url, data) =>
     fetch(`${BASE_URL}${url}`, {
         method: 'POST',
         headers: {
             "Content-Type": 'application/json',
-            Authorization: token
+            Authorization: getUserToken()
         },
         body: JSON.stringify(data)
     })
