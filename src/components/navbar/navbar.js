@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import * as Icons from 'react-icons/fa';
 import loginLogo from '../../assets/images/logocinza.gif';
 import { Button } from '../button/button.js'
-import { Logout } from '../../services/auth.js'
+//import { Logout } from '../../services/auth.js'
 import { navItems } from '../menuItems/menuItens.js';
 import './navbar.css';
 
 function Navbar() {
+  
+  const history = useHistory();
+
+  const Logout = () => {
+ 
+    localStorage.removeItem('user');
+    history.push('/');
+  
+  };
   const [mobile, setMobile] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
@@ -49,7 +58,7 @@ function Navbar() {
               );
             })}
             <li className='btn-logout'>
-              <Button className='btnLogout' onClick={() => Logout()}>LogOut
+              <Button className='btnLogout' onClick={Logout}>LogOut
               </Button> 
             </li>
           </ul>
