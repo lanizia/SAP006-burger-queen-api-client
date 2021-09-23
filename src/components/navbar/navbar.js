@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as Icons from 'react-icons/fa';
 import loginLogo from '../../assets/images/logocinza.gif';
-//import Button from '../button/button.js'
+import { Button } from '../button/button.js'
+import { Logout } from '../../services/auth.js'
 import { navItems } from '../menuItems/menuItens.js';
 import './navbar.css';
 
@@ -32,13 +33,11 @@ function Navbar() {
 
   return (
     <>
-      <nav className='navbar'>
-        <Link to={'/waiter'}>
-          <img src={loginLogo} alt='logo' />
-        </Link>
-        <h2 className='navbar-logo'>Niq's Burger</h2>
+      <nav className="navbar">
+        <img src={loginLogo} alt="logo" />
+        <h2 className="navbar-logo">Niq's Burger</h2>
         {!mobile && (
-          <ul className='nav-items'>
+          <ul className="nav-items">
             {navItems.map((item) => {
               return (
                 <li key={item.id} className={item.nName}>
@@ -49,18 +48,22 @@ function Navbar() {
                 </li>
               );
             })}
+            <li className='btn-logout'>
+              <Button className='btnLogout' onClick={() => Logout()}>LogOut
+              </Button> 
+            </li>
           </ul>
         )}
         {mobile && (
-          <div className='sidebar-toggle'>
+          <div className="sidebar-toggle">
             {sidebar ? (
               <Icons.FaTimes
-                className='sidebar-toggle-logo'
+                className="sidebar-toggle-logo"
                 onClick={() => setSidebar(!sidebar)}
               />
             ) : (
               <Icons.FaBars
-                className='sidebar-toggle-logo'
+                className="sidebar-toggle-logo"
                 onClick={() => setSidebar(!sidebar)}
               />
             )}
@@ -68,7 +71,7 @@ function Navbar() {
         )}
       </nav>
       <div className={sidebar ? 'sidebar active' : 'sidebar'}>
-        <ul className='sidebar-items'>
+        <ul className="sidebar-items">
           {navItems.map((item) => {
             return (
               <li key={item.id} className={item.sName}>
