@@ -140,3 +140,7 @@ form .form-inner .form-group input:focus {
   height: 35px;
   width: 138px;
 }
+
+.error {
+  color: rgb(251, 7, 7, 56%);
+}
