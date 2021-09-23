@@ -19,6 +19,8 @@ const Orders = () => {
       table: data.table,
       products: cartItems
     })
+    setData({ client: '', table: ''})
+    setCartItems([])
   };
 
 
