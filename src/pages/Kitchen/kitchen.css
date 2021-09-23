@@ -1,13 +1,12 @@
 .containerOrdersKitchen {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
-  align-content: space-around;
-  align-items: center;
+  justify-content: space-around;
 }
 
 .contentOrdersKitchen {
-  display: flex;
+  width: 28vw;
 }
 
 .contentOrdersKitchen h1 {
@@ -20,17 +19,77 @@
 
 .containerCardList {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
+.containerCardList ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
 .cardKitchen {
-  width: 300px;
-  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
   background: #252522;
   padding: 30px;
   margin: 20px;
-  border-top: 5px solid #ffc107;
+  border-top: 5px solid #ffd559;
   border-radius: 30px;
   box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
   -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
   -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+}
+
+.cardKitchen p {
+  text-transform: capitalize;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.orderLabel {
+  font-size: 1.3rem;
+  color: #facd45;
+}
+
+.btn-final {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 50px;
+  background: #252522;
+  border: 2px solid #ffc107;
+  color: #ffffff;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-final:hover {
+  background: #ffd559;
+  color: #252522;
+  border: 5px solid #0e0e0d;
+}
+
+/* Responsividade */
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .contentOrdersKitchen h1 {
+    margin-top: 20px;
+    height: 17vh;
+  }
+
+  .cardKitchen {
+    width: 331px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  .contentOrdersKitchen h1 {
+    margin-left: -30px;
+    height: 18vh;
+  }
 }

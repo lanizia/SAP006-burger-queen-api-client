@@ -120,6 +120,7 @@
 }
 
 .sidebar-item a:hover {
+  color: #0e0e0e;
   background: #ffc107;
 }
 
@@ -140,10 +141,15 @@
   border-radius: 5px;
   box-shadow: none;
   font-weight: 500;
-  transition: 0.2s all ease-out;
 }
 
 .btnLogout:hover {
+  color: #0e0e0e;
+  background: #ffc107;
+}
+
+.sidebarBtnLogout:hover {
+  width: 250px;
   color: #0e0e0e;
   background: #ffc107;
 }
