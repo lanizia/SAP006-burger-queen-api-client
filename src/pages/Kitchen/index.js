@@ -1,5 +1,5 @@
 import Navbar from '../../components/navbar/navbar.js';
-//import '../../components/productsList/productsList.css';
+import {OrdersList} from '../../components/kitchen/kitchen.js';
 import './kitchen.css';
 const Kitchen = () => {
   return (
@@ -13,10 +13,8 @@ const Kitchen = () => {
         <div className="contentOrdersKitchen">
           <h1>Pedidos recebidos</h1>
         </div>
-
-        <section className="containerCardList">
-          <div className="cardKitchen"> </div>
-        </section>
+       <OrdersList />
+      
       </main>
     </>
   );

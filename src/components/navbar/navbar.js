@@ -91,6 +91,10 @@ function Navbar() {
               </li>
             );
           })}
+          <li className='btn-logout'>
+              <Button className='btnLogout sidebarBtnLogout' onClick={Logout}>LogOut
+              </Button> 
+            </li>
         </ul>
       </div>
     </>
