@@ -33,3 +33,14 @@ export const get = (url) =>
         },
     })
     .then(parseResponse)
+
+ export const put = (url, data) =>
+    fetch(`${BASE_URL}${url}`, {
+        method: 'PUT',
+        headers: {
+            "Content-Type": 'application/json',
+            Authorization: getUserToken()
+        },
+        body: JSON.stringify(data)
+    })
+    .then(parseResponse)
