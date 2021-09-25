@@ -1,21 +1,11 @@
 import { useEffect, useState } from 'react';
 import { get } from '../../api/api';
-import { put } from '../../api/api';
-import { Button} from '../button/button.js';
+import { Button } from '../button/button'
 import { getStatusLabel, getTime } from '../Time/getTime.js';
 
-export const OrdersList = () => {
+export const OrdersList = ({updateStatus}) => {
   const [orders, setOrders] = useState([]);
-  const [dataStatus, setDataStatus] = useState([])
 
-  const updateStatus = async () => {
-    await put('/orders', {
-      status: dataStatus
-    })
-    setDataStatus([])
-  }
-  console.log(updateStatus);
-  
  const sortByDate = (a, b) => {
     return new Date(a.createdAt) - new Date(b.createdAt)
  }
