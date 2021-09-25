@@ -2,11 +2,16 @@ import { useEffect, useState } from 'react';
 import { get } from '../../api/api';
 import { Button} from '../button/button.js'
 
+
 export const OrdersList = () => {
   const [orders, setOrders] = useState([]);
 
+ const sortByDate = (a, b) => {
+    return new Date(a.createdAt) - new Date(b.createdAt)
+ }
+
   useEffect(() => {
-    get('/orders').then(setOrders);
+    get('/orders').then(orders => {setOrders(orders.sort(sortByDate))});
   }, []);
 
   return (
@@ -14,8 +19,11 @@ export const OrdersList = () => {
       <section className='containerCardList'>
         <ul>
           {orders.map((order) => (
+          
             <li className='cardKitchen' key={`order-${order.id}`}>
               <b>
+              <label className='orderLabel'>Horário de chegada do Pedido:</label>
+                <p>{order.createdAt} </p>
                 <label className='orderLabel'>Nome:</label>{' '}
                 <p> {order.client_name} </p>
                 <label className='orderLabel'>Mesa:</label>{' '}
