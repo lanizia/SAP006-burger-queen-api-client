@@ -1,12 +1,19 @@
 import { useEffect, useState } from 'react';
 import { get } from '../../api/api';
-import { Button} from '../button/button.js'
+import { Button } from '../button/button'
+import { getStatusLabel, getTime } from '../Time/getTime.js';
 
-export const OrdersList = () => {
+export const OrdersList = ({updateStatus}) => {
   const [orders, setOrders] = useState([]);
 
+ const sortByDate = (a, b) => {
+    return new Date(a.createdAt) - new Date(b.createdAt)
+ }
+
   useEffect(() => {
-    get('/orders').then(setOrders);
+    get('/orders').then(orders => {
+      setOrders(orders.sort(sortByDate));
+    });
   }, []);
 
   return (
@@ -14,15 +21,17 @@ export const OrdersList = () => {
       <section className='containerCardList'>
         <ul>
           {orders.map((order) => (
+          
             <li className='cardKitchen' key={`order-${order.id}`}>
-              <b>
+              <b><label className='orderLabel'>Horário:</label>{' '}
+                <p> {getTime(order.createdAt)} </p>
                 <label className='orderLabel'>Nome:</label>{' '}
                 <p> {order.client_name} </p>
                 <label className='orderLabel'>Mesa:</label>{' '}
                 <p>{order.table} </p>
-                <label className='orderLabel'>Status do pedido:</label>{' '}
-                <p>{order.status}</p>
-                <label className='orderLabel'>Pedidos:</label>
+                <label className='orderLabel'>Status:</label>{' '}
+                <p>{getStatusLabel(order.status)}</p>
+                <label className='orderLabel'>Itens:</label>
                 {order.Products.map((product) => (
                   <p>
                     {' '}
@@ -31,7 +40,7 @@ export const OrdersList = () => {
                   </p>
                 ))}
               </b>
-              <Button className='btn-final'> Pedido Finalizado </Button>
+              <Button type='submit' className='btn-final' onClick={updateStatus}> Pedido Finalizado </Button>
             </li>
           ))}
         </ul>

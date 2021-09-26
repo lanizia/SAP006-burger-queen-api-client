@@ -2,6 +2,7 @@ import Navbar from '../../components/navbar/navbar.js';
 import {OrdersList} from '../../components/kitchen/kitchen.js';
 import './kitchen.css';
 const Kitchen = () => {
+  
   return (
     <>
       <header className="container-nav">
