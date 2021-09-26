@@ -1,26 +1,14 @@
 import { useEffect, useState } from 'react';
 import { get } from '../../api/api';
-import { Button} from '../button/button.js'
+import { Button } from '../button/button'
+import { getStatusLabel, getTime } from '../Time/getTime.js';
 
-const getStatusLabel = (status) => {
-  const map = {
-    pending: 'Pendente'
-  }
-  return map[status] || status
-}
-const getTime = (dateString) => {
-  const date = new Date(dateString);
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  return hours + ':' + minutes;
-}
-
-export const OrdersList = () => {
+export const OrdersList = ({updateStatus}) => {
   const [orders, setOrders] = useState([]);
-  
-  const sortByDate = (a, b) => {
-    return new Date(a.createdAt) - new Date(b.createdAt);
-  } 
+
+ const sortByDate = (a, b) => {
+    return new Date(a.createdAt) - new Date(b.createdAt)
+ }
 
   useEffect(() => {
     get('/orders').then(orders => {
@@ -33,6 +21,7 @@ export const OrdersList = () => {
       <section className='containerCardList'>
         <ul>
           {orders.map((order) => (
+          
             <li className='cardKitchen' key={`order-${order.id}`}>
               <b><label className='orderLabel'>Horário:</label>{' '}
                 <p> {getTime(order.createdAt)} </p>
@@ -51,7 +40,7 @@ export const OrdersList = () => {
                   </p>
                 ))}
               </b>
-              <Button className='btn-final'> Pedido Finalizado </Button>
+              <Button type='submit' className='btn-final' onClick={updateStatus}> Pedido Finalizado </Button>
             </li>
           ))}
         </ul>
