@@ -10,7 +10,7 @@ export const getStatusLabel = (status) => {
 
 export const getStatusLabelTwo = (status) => {
     const map = {
-      pending: 'Preparado',
+      pending: 'Pronto',
     };
     return map[status] || status;
   };
