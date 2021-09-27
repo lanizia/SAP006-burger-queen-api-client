@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
 import * as Icons from 'react-icons/fa';
 import loginLogo from '../../assets/images/logocinza.gif';
-import { Button } from '../button/button.js'
-//import { Logout } from '../../services/auth.js'
-import { navItems } from '../menuItems/menuItens.js';
 import './navbar.css';
+import { NavComponents} from '../navComponents/navComponents';
+
 
 function Navbar() {
   
-  const history = useHistory();
-
-  const Logout = () => {
- 
-    localStorage.removeItem('user');
-    history.push('/');
-  
-  };
   const [mobile, setMobile] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
@@ -45,23 +35,10 @@ function Navbar() {
       <nav className="navbar">
         <img src={loginLogo} alt="logo" />
         <h2 className="navbar-logo">Niq's Burger</h2>
-        {!mobile && (
+        {!mobile &&  (
           <ul className="nav-items">
-            {navItems.map((item) => {
-              return (
-                <li key={item.id} className={item.nName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-            <li className='btn-logout'>
-              <Button className='btnLogout' onClick={Logout}>LogOut
-              </Button> 
-            </li>
-          </ul>
+         <NavComponents />
+         </ul> 
         )}
         {mobile && (
           <div className="sidebar-toggle">
@@ -81,20 +58,7 @@ function Navbar() {
       </nav>
       <div className={sidebar ? 'sidebar active' : 'sidebar'}>
         <ul className="sidebar-items">
-          {navItems.map((item) => {
-            return (
-              <li key={item.id} className={item.sName}>
-                <Link to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Link>
-              </li>
-            );
-          })}
-          <li className='btn-logout'>
-              <Button className='btnLogout sidebarBtnLogout' onClick={Logout}>LogOut
-              </Button> 
-            </li>
+          <NavComponents/>
         </ul>
       </div>
     </>

@@ -18,3 +18,14 @@ export const getUserToken = () => {
   return null;
 };
 
+export const getUser = () => {
+  const localUser = localStorage.getItem('user');
+  if (localUser) {
+    const user = JSON.parse(localUser);
+    return user
+  }
+  return null;
+};
+
+
+
