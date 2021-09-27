@@ -1,19 +1,33 @@
 import { useEffect, useState } from 'react';
-import { get } from '../../api/api';
+import { get, put } from '../../api/api';
 import { Button } from '../button/button'
-import { getStatusLabel, getTime } from '../Time/getTime.js';
+import {  getStatusLabel } from '../Time/getTime.js';
+import { TimeOrPrepareTime } from '../TimeOrPrepareTime/TimeOrPrepareTime';
 
-export const OrdersList = ({updateStatus}) => {
+
+export const OrdersList = ({ showStatus, nextStatus, nextStatusLabel }) => {
   const [orders, setOrders] = useState([]);
 
- const sortByDate = (a, b) => {
+  const byShowStatus = (order) => {
+    return order.status === showStatus
+  }
+
+  const sortByDate = (a, b) => {
     return new Date(a.createdAt) - new Date(b.createdAt)
+  }
+
+  const fetchOrders = async () => {
+    const allOrders = await get('/orders');
+    setOrders(allOrders.filter(byShowStatus).sort(sortByDate));
+  }
+
+  const updateStatus = async (orderId) => {
+    await put(`/orders/${orderId}`, {status: nextStatus}) 
+    fetchOrders()
  }
 
   useEffect(() => {
-    get('/orders').then(orders => {
-      setOrders(orders.sort(sortByDate));
-    });
+    fetchOrders()
   }, []);
 
   return (
@@ -21,10 +35,11 @@ export const OrdersList = ({updateStatus}) => {
       <section className='containerCardList'>
         <ul>
           {orders.map((order) => (
-          
+
             <li className='cardKitchen' key={`order-${order.id}`}>
-              <b><label className='orderLabel'>Horário:</label>{' '}
-                <p> {getTime(order.createdAt)} </p>
+              <b>
+                <TimeOrPrepareTime order={order} />
+
                 <label className='orderLabel'>Nome:</label>{' '}
                 <p> {order.client_name} </p>
                 <label className='orderLabel'>Mesa:</label>{' '}
@@ -40,7 +55,7 @@ export const OrdersList = ({updateStatus}) => {
                   </p>
                 ))}
               </b>
-              <Button type='submit' className='btn-final' onClick={updateStatus}> Pedido Finalizado </Button>
+              <Button type='submit' className='btn-final' onClick={() => updateStatus(order.id)}> {nextStatusLabel} </Button>
             </li>
           ))}
         </ul>

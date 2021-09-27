@@ -11,6 +11,12 @@ const parseResponse = async (response) => {
         }
         return json;
     }
+const parseBody = (data) => {
+    if(typeof data === 'object') {
+        return JSON.stringify(data)
+    }
+    return data
+}
 
 export const post = (url, data) =>
     fetch(`${BASE_URL}${url}`, {
@@ -19,7 +25,7 @@ export const post = (url, data) =>
             "Content-Type": 'application/json',
             Authorization: getUserToken()
         },
-        body: JSON.stringify(data)
+        body: parseBody(data)
     })
     .then(parseResponse) 
   
@@ -39,8 +45,8 @@ export const get = (url) =>
         method: 'PUT',
         headers: {
             "Content-Type": 'application/json',
-            Authorization: getUserToken()
+            Authorization: getUserToken(),
         },
-        body: JSON.stringify(data)
+        body: parseBody(data)
     })
     .then(parseResponse)

@@ -1,17 +1,9 @@
-import { useState } from 'react';
 import Navbar from '../../components/navbar/navbar.js';
-import { DoneOrdersList } from '../../components/waiter/waiter.js';
-import { put } from '../../api/api';
 import '../Kitchen/kitchen.css';
-const Waiter = () => {
-  const [dataStatus, setDataStatus] = useState('pending')
+import { OrdersList } from '../../components/OrdersList/ordersList.js';
 
-  const updateStatus = async () => {
-    await put('/orders', {
-      status: dataStatus
-    })
-    setDataStatus({status:'delivered'})
-  }
+const Waiter = () => {
+
   return (
     <>
       <header className="container-nav">
@@ -23,7 +15,7 @@ const Waiter = () => {
         <div className="contentOrdersKitchen">
           <h1>Para Entregar</h1>
         </div>
-        <DoneOrdersList updateStatus={updateStatus} />
+        <OrdersList showStatus="ready" nextStatus="delivered" nextStatusLabel="Pedido Entregue" />
       </main>
     </>
   );

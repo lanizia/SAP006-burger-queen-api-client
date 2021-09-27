@@ -1,5 +1,5 @@
 import Navbar from '../../components/navbar/navbar.js';
-import {OrdersList} from '../../components/kitchen/kitchen.js';
+import { OrdersList } from '../../components/OrdersList/ordersList.js';
 import './kitchen.css';
 const Kitchen = () => {
   
@@ -14,7 +14,7 @@ const Kitchen = () => {
         <div className="contentOrdersKitchen">
           <h1>Pedidos recebidos</h1>
         </div>
-       <OrdersList />
+       <OrdersList showStatus="pending" nextStatus="ready" nextStatusLabel="Pedido Finalizado"/>
       
       </main>
     </>
