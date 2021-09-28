@@ -14,7 +14,8 @@ export function Button ({
         className={className}
         onClick={onClick}
         value={value}
-        id={id}>
+        id={id}
+        data-testid={`button-${id}`}>
             {children}
         </button>
     )

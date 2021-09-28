@@ -10,17 +10,25 @@ import { Button } from '../../components/button/button.js';
 const Orders = () => {
   const [cartItems, setCartItems] = useState([]);
   const [data, setData] = useState({ client: '', table: '' });
+  const [error, setError] = useState('');
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    console.log(data);
-    await post('/orders', {
-      client: data.client,
-      table: data.table,
-      products: cartItems
-    })
-    setData({ client: '', table: ''})
-    setCartItems([])
+  const submitHandler = async (event) => {
+    try {
+      event.preventDefault();
+      console.log(data);
+      await post('/orders', {
+        client: data.client,
+        table: data.table,
+        products: cartItems
+      })
+      setData({ client: '', table: ''})
+      setCartItems([])
+    } catch (e) {
+      console.log(e.code);
+      console.log(e.message);
+      setError('E-mail ou senha não preenchidos corretamente');
+    }
+ 
   };
 
 
@@ -77,13 +85,16 @@ const Orders = () => {
         <section className="ProductsPage-cart">
           <div className="container-input-client">
             <ClientName
+            error={error}
               data={data}
               setData={setData}
             />
             <Button 
+              aria-label='order'
               type='submit'
               value='client-name'
               className='btn-client'
+              id='orders'
               onClick={submitHandler}>
                   Enviar
             </Button>

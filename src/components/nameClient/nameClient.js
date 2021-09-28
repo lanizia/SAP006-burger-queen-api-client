@@ -3,11 +3,12 @@ import { Label } from '../label/label';
 import './name-client.css'
 //import { useState } from 'react/cjs/react.development';
 
-const ClientName = ({data, setData}) => {
+const ClientName = ({data, setData, error}) => {
  
     return (
         <>
          <h2>Carrinho</h2>
+         {error !== '' ? <div id='erro' className="error">{error}</div> : ''}
         <div className='content-label'>
         <Label 
         htmlFor='client-name'
@@ -17,7 +18,7 @@ const ClientName = ({data, setData}) => {
         inputPlaceholder='Mariazinha'
         inputName='client-name'
         inputClass='client-name-input'
-        id='client-name'
+        id='clients'
         inputOnChange={(e) => setData({ ...data, client: e.target.value })}
         inputValue={data.client}
          />
@@ -27,7 +28,7 @@ const ClientName = ({data, setData}) => {
         inputPlaceholder='1 a 10'
         inputName='client-table'
         inputClass='client-name-input'
-        id='client-table'
+        id='table'
         inputOnChange={(e) => setData({ ...data, table: e.target.value })}
         inputValue={data.table}
          />
