@@ -2,16 +2,18 @@ import React from 'react';
 import { render, fireEvent, act, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Orders from './index';
+//import ClientName from '../../components/nameClient/nameClient.js';
 import { post, get } from '../../api/api';
 
 jest.mock('../../api/api');
 
 describe('Orders', () => {
+ 
   beforeEach(() => {
     jest.resetAllMocks();
     get.mockResolvedValue([]);
   });
-
+ 
   describe('with valid inputs and shopping cart with products', () => {
     it('calls the onSubmit function', async () => {
       //const mockSubmitHandler = jest.fn()
@@ -40,11 +42,11 @@ describe('Orders', () => {
   });
 
   describe('with an empty input', () => {
-      it('renders an error and dont call the onSubmit function', async () => {
+      it('renders an error', async () => {
 
         const { getByTestId } = render(
             <Router>
-              <Orders />
+              <Orders/>
             </Router>,
           );
           act(() => {
@@ -57,13 +59,14 @@ describe('Orders', () => {
               target: { value: '' },
             });
           });
-        
-
+     
           await act(async () => {
             fireEvent.click(screen.getByText(/Enviar/i));
           });
-    
-          expect(post).toBe("E-mail ou senha não preenchidos corretamente");
+       
+          expect(post).toHaveBeenCalled();
+          expect(/*o que colocar aqui */).toBe('E-mail ou senha não preenchidos corretamente');
+         
       })
   })
 });
