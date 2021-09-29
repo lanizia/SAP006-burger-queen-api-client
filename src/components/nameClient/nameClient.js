@@ -8,7 +8,7 @@ const ClientName = ({data, setData, error}) => {
     return (
         <>
          <h2>Carrinho</h2>
-         {error !== '' ? <div id='erro' className="error">{error}</div> : ''}
+         {error !== '' ? <div data-testid='error' className="error">{error}</div> : ''}
         <div className='content-label'>
         <Label 
         htmlFor='client-name'
