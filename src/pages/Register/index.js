@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import { post } from '../../api/api.js';
-import FormRegister from '../../components/register/formRegister';
-import '../Login/index.css';
+import FormRegister from '../../components/formRegister/formRegister';
+import '../pagesStyle/reset.css';
 
 const Register = () => {
   const [error, setError] = useState('');
@@ -21,7 +21,7 @@ const Register = () => {
   };
 
   return (
-    <div className='AppLogin'>
+    <div className="AppLogin">
       <FormRegister submitForm={fetchRegister} error={error} />
     </div>
   );

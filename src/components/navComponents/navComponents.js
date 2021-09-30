@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { getUser } from '../../services/auth';
 import { Button } from '../button/button';
-import { navItems } from '../menuItems/menuItens';
+import { navItems } from '../navItems/navItems';
 
 export const NavComponents = () => {
-const [user, setUser] = useState();
+  const [user, setUser] = useState();
   const history = useHistory();
 
   const Logout = () => {
@@ -13,10 +13,9 @@ const [user, setUser] = useState();
     history.push('/');
   };
 
-  useEffect(() =>{
-      setUser(getUser())
-
-  },[])
+  useEffect(() => {
+    setUser(getUser());
+  }, []);
 
   if (user?.role === 'waiter') {
     return (

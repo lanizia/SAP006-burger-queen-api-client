@@ -1,5 +1,5 @@
 import React from 'react'
-import FormLogin from '../src/components/login/formLogin.js'
+import FormLogin from '../../components/formLogin/formLogin'
 import { render, fireEvent } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
 import { BrowserRouter as Router } from 'react-router-dom'

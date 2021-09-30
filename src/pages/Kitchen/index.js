@@ -1,8 +1,7 @@
 import Navbar from '../../components/navbar/navbar.js';
-import { OrdersList } from '../../components/OrdersList/ordersList.js';
-import './kitchen.css';
+import { OrdersList } from '../../components/ordersList/ordersList.js';
+import '../pagesStyle/kitchenAndWaiter.css';
 const Kitchen = () => {
-  
   return (
     <>
       <header className="container-nav">
@@ -14,8 +13,11 @@ const Kitchen = () => {
         <div className="contentOrdersKitchen">
           <h1>Pedidos recebidos</h1>
         </div>
-       <OrdersList showStatus="pending" nextStatus="ready" nextStatusLabel="Pedido Finalizado"/>
-      
+        <OrdersList
+          showStatus="pending"
+          nextStatus="ready"
+          nextStatusLabel="Pedido Finalizado"
+        />
       </main>
     </>
   );

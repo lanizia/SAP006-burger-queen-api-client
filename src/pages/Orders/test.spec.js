@@ -40,7 +40,7 @@ describe('Orders', () => {
     });
   });
 
- /* describe('with an empty input', () => {
+  /* describe('with an empty input', () => {
     it('renders an error', async() => {
       const { getByTestId } = render(
         <Router>
