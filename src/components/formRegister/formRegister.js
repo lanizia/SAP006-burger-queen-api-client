@@ -23,12 +23,12 @@ const FormRegister = ({ submitForm }) => {
             Email:
           </Label>
           <Input
-            inputType="email"
-            inputPlaceholder="exemplo@exemplo.com"
-            inputName="email"
+            type="email"
+            placeholder="exemplo@exemplo.com"
+            name="email"
             id="email"
-            inputValue={values.email}
-            inputOnChange={handleChange}
+            value={values.email}
+            onChange={handleChange}
           />
           <span className="span-space">
             {' '}
@@ -40,12 +40,12 @@ const FormRegister = ({ submitForm }) => {
             Senha:
           </Label>
           <Input
-            inputType="password"
-            inputPlaceholder="exemplo123"
-            inputName="password"
+            type="password"
+            placeholder="exemplo123"
+            name="password"
             id="password"
-            inputValue={values.password}
-            inputOnChange={handleChange}
+            value={values.password}
+            onChange={handleChange}
           />
           <span className="span-space">
             {' '}

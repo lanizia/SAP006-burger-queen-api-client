@@ -19,23 +19,23 @@ const DataClient = ({ data, setData, error }) => {
           Nome do Cliente e mesa:{' '}
         </Label>
         <Input
-          inputType="text"
-          inputPlaceholder="Mariazinha"
-          inputName="client-name"
-          inputClass="client-name-input"
+          type="text"
+          placeholder="Mariazinha"
+          name="client-name"
+          className="client-name-input"
           id="clients"
-          inputOnChange={(e) => setData({ ...data, client: e.target.value })}
-          inputValue={data.client}
+          onChange={(e) => setData({ ...data, client: e.target.value })}
+          value={data.client}
         />
       </div>
       <Input
-        inputType="number"
-        inputPlaceholder="1 a 10"
-        inputName="client-table"
-        inputClass="client-name-input"
+        type="number"
+        placeholder="1 a 10"
+        name="client-table"
+        className="client-name-input"
         id="table"
-        inputOnChange={(e) => setData({ ...data, table: e.target.value })}
-        inputValue={data.table}
+        onChange={(e) => setData({ ...data, table: e.target.value })}
+        value={data.table}
       />
     </>
   );
