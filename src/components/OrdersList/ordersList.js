@@ -1,52 +1,49 @@
 import { useEffect, useState } from 'react';
 import { get, put } from '../../api/api';
-import { Button } from '../button/button'
-import {  getStatusLabel } from '../Time/getTime.js';
+import { Button } from '../button/button';
+import { getStatusLabel } from '../Time/getTime.js';
 import { TimeOrPrepareTime } from '../TimeOrPrepareTime/TimeOrPrepareTime';
-
 
 export const OrdersList = ({ showStatus, nextStatus, nextStatusLabel }) => {
   const [orders, setOrders] = useState([]);
 
   const byShowStatus = (order) => {
-    return order.status === showStatus
-  }
+    return order.status === showStatus;
+  };
 
   const sortByDate = (a, b) => {
-    return new Date(a.createdAt) - new Date(b.createdAt)
-  }
+    return new Date(a.createdAt) - new Date(b.createdAt);
+  };
 
   const fetchOrders = async () => {
     const allOrders = await get('/orders');
     setOrders(allOrders.filter(byShowStatus).sort(sortByDate));
-  }
+  };
 
   const updateStatus = async (orderId) => {
-    await put(`/orders/${orderId}`, {status: nextStatus}) 
-    fetchOrders()
- }
+    await put(`/orders/${orderId}`, { status: nextStatus });
+    fetchOrders();
+  };
 
   useEffect(() => {
-    fetchOrders()
+    fetchOrders();
   }, []);
 
   return (
     <>
-      <section className='containerCardList'>
+      <section className="containerCardList">
         <ul>
           {orders.map((order) => (
-
-            <li className='cardKitchen' key={`order-${order.id}`}>
+            <li className="cardKitchen" key={`order-${order.id}`}>
               <b>
                 <TimeOrPrepareTime order={order} />
-
-                <label className='orderLabel'>Nome:</label>{' '}
+                <label className="orderLabel">Nome:</label>{' '}
                 <p> {order.client_name} </p>
-                <label className='orderLabel'>Mesa:</label>{' '}
+                <label className="orderLabel">Mesa:</label>{' '}
                 <p>{order.table} </p>
-                <label className='orderLabel'>Status:</label>{' '}
+                <label className="orderLabel">Status:</label>{' '}
                 <p>{getStatusLabel(order.status)}</p>
-                <label className='orderLabel'>Itens:</label>
+                <label className="orderLabel">Itens:</label>
                 {order.Products.map((product) => (
                   <p>
                     {' '}
@@ -55,7 +52,14 @@ export const OrdersList = ({ showStatus, nextStatus, nextStatusLabel }) => {
                   </p>
                 ))}
               </b>
-              <Button type='submit' className='btn-final' onClick={() => updateStatus(order.id)}> {nextStatusLabel} </Button>
+              <Button
+                type="submit"
+                className="btn-final"
+                onClick={() => updateStatus(order.id)}
+              >
+                {' '}
+                {nextStatusLabel}{' '}
+              </Button>
             </li>
           ))}
         </ul>

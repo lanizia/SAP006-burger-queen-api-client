@@ -1,0 +1,96 @@
+.not-found-container {
+  background-size: 350px;
+  background-position: center;
+  background-color: #0e0e0e;
+}
+
+.img-error-404 {
+  height: 400px;
+}
+
+.not-found-page {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-not-found {
+  width: 150px;
+  height: 150px;
+  margin-left: 75px;
+  border-radius: 50%;
+}
+
+.not-found-title {
+  color: #ffc107;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.not-found-text {
+  display: flex;
+  color: #ffffff;
+  font-size: 1.2rem;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  width: 550px;
+  height: 240px;
+  background: #252522;
+  padding: 30px;
+  margin: 20px;
+  border-top: 5px solid #ffc107;
+  border-radius: 30px;
+  box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -webkit-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+  -moz-box-shadow: 4px 3px 20px 7px rgb(0 0 0 / 67%);
+}
+
+.not-found-link-home {
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  color: #ffc107;
+}
+.not-found-link-home:hover {
+  color: rgb(251, 7, 7, 56%);
+}
+
+@media (max-width: 900px) {
+  .img-error-404 {
+    height: 300px;
+  }
+
+  .not-found-text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .not-found-page {
+    width: 100%;
+  }
+
+  .img-error-404 {
+    height: 200px;
+  }
+
+  .not-found-title {
+    font-size: 1.4rem;
+  }
+
+  .not-found-text {
+    width: 90%;
+  }
+}
