@@ -44,7 +44,7 @@ const LoginPage = () => {
   }, []);
 
   return (
-    <div className="AppLogin">
+    <div className='AppLogin'>
       <FormLogin Login={Login} error={error} />
     </div>
   );

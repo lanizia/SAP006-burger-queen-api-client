@@ -16,8 +16,8 @@ describe('Register', () => {
             const {getByTestId, getByRole} = render(<Router><FormRegister submitForm={mockFetchRegister}/></Router>)
 
             act(() => {
-                fireEvent.change(getByTestId("input-email"), {target: {value: "email@test.com"}})
-                fireEvent.change(getByTestId("input-password"), {target: {value: "1234567"}})
+                fireEvent.change(getByTestId('input-email'), {target: {value: 'email@test.com'}})
+                fireEvent.change(getByTestId('input-password'), {target: {value: '1234567'}})
                 fireEvent.change(getByTestId('select-role'), {target: {value: 'waiter'}})
             })
 
@@ -35,8 +35,8 @@ describe('Register', () => {
             const {getByTestId, getByRole} = render(<Router><FormRegister submitForm={mockFetchRegister}/></Router>)
 
             act(() => {
-                fireEvent.change(getByTestId("input-email"), {target: {value: ''}})
-                fireEvent.change(getByTestId("input-password"), {target: {value: ''}})
+                fireEvent.change(getByTestId('input-email'), {target: {value: ''}})
+                fireEvent.change(getByTestId('input-password'), {target: {value: ''}})
                 fireEvent.change(getByTestId('select-role'), {target: {value: ''}})
             })
 

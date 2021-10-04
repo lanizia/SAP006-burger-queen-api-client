@@ -16,65 +16,65 @@ const FormRegister = ({ submitForm }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-inner">
+      <div className='form-inner'>
         <h2>Cadastro</h2>
-        <div className="form-group">
-          <Label htmlFor="email" labelInfo="labels">
+        <div className='form-group'>
+          <Label htmlFor='email' labelInfo='labels'>
             Email:
           </Label>
           <Input
-            type="email"
-            placeholder="exemplo@exemplo.com"
-            name="email"
-            id="email"
+            type='email'
+            placeholder='exemplo@exemplo.com'
+            name='email'
+            id='email'
             value={values.email}
             onChange={handleChange}
           />
-          <span className="span-space">
+          <span className='span-space'>
             {' '}
             {errors.email && <p>{errors.email}</p>}{' '}
           </span>
         </div>
-        <div className="form-group">
-          <Label htmlFor="password" labelInfo="labels">
+        <div className='form-group'>
+          <Label htmlFor='password' labelInfo='labels'>
             Senha:
           </Label>
           <Input
-            type="password"
-            placeholder="exemplo123"
-            name="password"
-            id="password"
+            type='password'
+            placeholder='exemplo123'
+            name='password'
+            id='password'
             value={values.password}
             onChange={handleChange}
           />
-          <span className="span-space">
+          <span className='span-space'>
             {' '}
             {errors.password && <p>{errors.password}</p>}{' '}
           </span>
         </div>
 
-        <div className="custom-select">
+        <div className='custom-select'>
           <select
-            className="select-input-styled"
-            data-testid="select-role"
-            id="options-info"
-            name="role"
+            className='select-input-styled'
+            data-testid='select-role'
+            id='options-info'
+            name='role'
             value={values.role}
             onChange={handleChange}
           >
-            <option value=""></option>
-            <option value="waiter"> Salão </option>
-            <option value="kitchen"> Cozinha</option>
+            <option value=''></option>
+            <option value='waiter'> Salão </option>
+            <option value='kitchen'> Cozinha</option>
           </select>
-          <span className="span-space">
+          <span className='span-space'>
             {' '}
             {errors.role && <p>{errors.role}</p>}{' '}
           </span>
         </div>
-        <Button type="submit" value="login" className="btn-submit">
+        <Button type='submit' value='login' className='btn-submit'>
           Cadastrar
         </Button>
-        <p className="txt-paragrafer">
+        <p className='txt-paragrafer'>
           {' '}
           Já possui cadastro? <Link to={'/'}> Clique aqui e faça Login</Link>
         </p>

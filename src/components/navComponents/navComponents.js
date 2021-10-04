@@ -30,8 +30,8 @@ export const NavComponents = () => {
             </li>
           );
         })}
-        <li className="btn-logout">
-          <Button className="btnLogout" onClick={Logout}>
+        <li className='btn-logout'>
+          <Button className='btnLogout' onClick={Logout}>
             LogOut
           </Button>
         </li>
@@ -40,9 +40,9 @@ export const NavComponents = () => {
   }
   return (
     <>
-      <ul className="nav-items">
-        <li className="btn-logout">
-          <Button className="btnLogout" onClick={Logout}>
+      <ul className='nav-items'>
+        <li className='btn-logout'>
+          <Button className='btnLogout' onClick={Logout}>
             LogOut
           </Button>
         </li>

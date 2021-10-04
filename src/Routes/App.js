@@ -14,11 +14,11 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-          <Route path="/" exact component={LoginPage} />
-          <Route path="/register" component={Register} />
-          <PrivateRoute path="/waiter" component={Waiter} />
-          <PrivateRoute path="/kitchen" component={Kitchen} />
-          <PrivateRoute path="/orders" component={Orders} />
+          <Route path='/' exact component={LoginPage} />
+          <Route path='/register' component={Register} />
+          <PrivateRoute path='/waiter' component={Waiter} />
+          <PrivateRoute path='/kitchen' component={Kitchen} />
+          <PrivateRoute path='/orders' component={Orders} />
           <Route component={NotFound} />
         </Switch>
       </div>

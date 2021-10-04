@@ -13,7 +13,7 @@ const Total = ({ cartItems }) => {
     setTotal(newTotal);
   }, [cartItems]);
 
-  return <div className="CartTotal">Total: {formatMoney(total)}</div>;
+  return <div className='CartTotal'>Total: {formatMoney(total)}</div>;
 };
 
 const CartItems = ({ cartItems, removeFromCart }) => {
@@ -29,7 +29,7 @@ const CartItems = ({ cartItems, removeFromCart }) => {
               {item.complement ? ` com ${item.complement}` : null}-{' '}
               {formatMoney(item.price)}
             </b>
-            <Button type="button" onClick={() => removeFromCart(index)}>
+            <Button type='button' onClick={() => removeFromCart(index)}>
               remover
             </Button>
           </li>
@@ -40,12 +40,12 @@ const CartItems = ({ cartItems, removeFromCart }) => {
 };
 
 const CartEmptyState = () => (
-  <p className="empty-state">Nenhum item no carrinho</p>
+  <p className='empty-state'>Nenhum item no carrinho</p>
 );
 
 export const Cart = ({ cartItems, removeFromCart }) => {
   return (
-    <div className="Cart">
+    <div className='Cart'>
       {cartItems.length === 0 ? (
         <CartEmptyState />
       ) : (

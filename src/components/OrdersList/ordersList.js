@@ -32,19 +32,19 @@ export const OrdersList = ({ showStatus, nextStatus, nextStatusLabel }) => {
 
   return (
     <>
-      <section className="containerCardList">
+      <section className='containerCardList'>
         <ul>
           {orders.map((order) => (
-            <li className="cardKitchen" key={`order-${order.id}`}>
+            <li className='cardKitchen' key={`order-${order.id}`}>
               <b>
                 <TimeOrPrepareTime order={order} />
-                <label className="orderLabel">Nome:</label>{' '}
+                <label className='orderLabel'>Nome:</label>{' '}
                 <p> {order.client_name} </p>
-                <label className="orderLabel">Mesa:</label>{' '}
+                <label className='orderLabel'>Mesa:</label>{' '}
                 <p>{order.table} </p>
-                <label className="orderLabel">Status:</label>{' '}
+                <label className='orderLabel'>Status:</label>{' '}
                 <p>{getStatusLabel(order.status)}</p>
-                <label className="orderLabel">Itens:</label>
+                <label className='orderLabel'>Itens:</label>
                 {order.Products.map((product) => (
                   <p>
                     {' '}
@@ -54,8 +54,8 @@ export const OrdersList = ({ showStatus, nextStatus, nextStatusLabel }) => {
                 ))}
               </b>
               <Button
-                type="submit"
-                className="btn-final"
+                type='submit'
+                className='btn-final'
                 onClick={() => updateStatus(order.id)}
               >
                 {' '}
