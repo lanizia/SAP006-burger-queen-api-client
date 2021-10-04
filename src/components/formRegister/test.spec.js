@@ -1,8 +1,6 @@
 import React from 'react'
-//import Register from '../../pages/register/index.js';
 import { render, fireEvent, act } from '@testing-library/react'
 import FormRegister from './formRegister.js';
-//import { act } from 'react-dom/test-utils'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 
@@ -18,8 +16,8 @@ describe('Register', () => {
             const {getByTestId, getByRole} = render(<Router><FormRegister submitForm={mockFetchRegister}/></Router>)
 
             act(() => {
-                fireEvent.change(getByTestId("input-email"), {target: {value: "email@test.com"}})
-                fireEvent.change(getByTestId("input-password"), {target: {value: "1234567"}})
+                fireEvent.change(getByTestId('input-email'), {target: {value: 'email@test.com'}})
+                fireEvent.change(getByTestId('input-password'), {target: {value: '1234567'}})
                 fireEvent.change(getByTestId('select-role'), {target: {value: 'waiter'}})
             })
 
@@ -37,8 +35,8 @@ describe('Register', () => {
             const {getByTestId, getByRole} = render(<Router><FormRegister submitForm={mockFetchRegister}/></Router>)
 
             act(() => {
-                fireEvent.change(getByTestId("input-email"), {target: {value: ''}})
-                fireEvent.change(getByTestId("input-password"), {target: {value: ''}})
+                fireEvent.change(getByTestId('input-email'), {target: {value: ''}})
+                fireEvent.change(getByTestId('input-password'), {target: {value: ''}})
                 fireEvent.change(getByTestId('select-role'), {target: {value: ''}})
             })
 

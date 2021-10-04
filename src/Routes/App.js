@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
-
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import LoginPage from '../pages/Login/index.js';
 import Register from '../pages/Register/index.js';
@@ -16,7 +11,6 @@ import PrivateRoute from './PrivateRoute.js';
 
 const App = () => {
   return (
-
     <Router>
       <div>
         <Switch>
@@ -30,6 +24,6 @@ const App = () => {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

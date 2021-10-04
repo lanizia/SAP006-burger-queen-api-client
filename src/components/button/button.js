@@ -8,6 +8,7 @@ export function Button({ children, type, value, className, onClick, id }) {
       onClick={onClick}
       value={value}
       id={id}
+      data-testid={`button-${id}`}
     >
       {children}
     </button>
