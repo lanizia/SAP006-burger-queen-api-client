@@ -17,10 +17,10 @@ export const ProductList = ({ addToCart }) => {
 
   return (
     <>
-      <section className="btn-menu-content">
+      <section className='btn-menu-content'>
         <MenuBtn onChangeMenu={setMenuType} />
       </section>
-      <ul className="ProductsList">
+      <ul className='ProductsList'>
         {products.filter(filterByMenuType).map((product) => (
           <li key={`product-${product.id}`}>
             <b>
@@ -31,9 +31,9 @@ export const ProductList = ({ addToCart }) => {
             <img src={product.image} alt={product.name}></img>
             <p>{formatMoney(product.price)}</p>
             <Button
-              type="button"
-              value="adicionar"
-              className="btn-adicionar"
+              type='button'
+              value='adicionar'
+              className='btn-adicionar'
               onClick={() => addToCart(product)}
             >
               Adicionar

@@ -4,19 +4,19 @@ import '../pagesStyle/kitchenAndWaiter.css';
 const Kitchen = () => {
   return (
     <>
-      <header className="container-nav">
-        <div className="header">
+      <header className='container-nav'>
+        <div className='header'>
           <Navbar />
         </div>
       </header>
-      <main className="containerOrdersKitchen">
-        <div className="contentOrdersKitchen">
+      <main className='containerOrdersKitchen'>
+        <div className='contentOrdersKitchen'>
           <h1>Pedidos recebidos</h1>
         </div>
         <OrdersList
-          showStatus="pending"
-          nextStatus="ready"
-          nextStatusLabel="Pedido Finalizado"
+          showStatus='pending'
+          nextStatus='ready'
+          nextStatusLabel='Pedido Finalizado'
         />
       </main>
     </>

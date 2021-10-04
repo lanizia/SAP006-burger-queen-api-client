@@ -26,7 +26,7 @@ const Orders = () => {
     } catch (e) {
       console.log(e.code);
       console.log(e.message);
-      setError('E-mail ou senha não preenchidos corretamente');
+      setError('Ops, algo está errado. Preencha corretamente.');
     }
   };
 
@@ -70,26 +70,26 @@ const Orders = () => {
 
   return (
     <>
-      <header className="container-nav">
-        <div className="header">
+      <header className='container-nav'>
+        <div className='header'>
           <Navbar />
         </div>
       </header>
 
-      <main className="ProductsPage">
-        <div className="ProductsPage-list">
+      <main className='ProductsPage'>
+        <div className='ProductsPage-list'>
           <ProductList addToCart={addToCart} />
         </div>
 
-        <section className="ProductsPage-cart">
-          <div className="container-input-client">
+        <section className='ProductsPage-cart'>
+          <div className='container-input-client'>
             <DataClient error={error} data={data} setData={setData} />
             <Button
-              aria-label="order"
-              type="submit"
-              value="client-name"
-              className="btn-client"
-              id="orders"
+              aria-label='order'
+              type='submit'
+              value='client-name'
+              className='btn-client'
+              id='orders'
               onClick={submitHandler}
             >
               Enviar

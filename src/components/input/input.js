@@ -9,6 +9,8 @@ export function Input({
   onChange,
   name,
   id,
+  min,
+  max
 }) {
   return (
     <input
@@ -18,6 +20,8 @@ export function Input({
       required={required}
       className={className}
       onChange={onChange}
+      min={min}
+      max={max}
       name={name}
       id={id}
       data-testid={`input-${id}`}

@@ -30,24 +30,24 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
-        <img src={loginLogo} alt="logo" />
-        <h2 className="navbar-logo">Niq's Burger</h2>
+      <nav className='navbar'>
+        <img src={loginLogo} alt='logo' />
+        <h2 className='navbar-logo'>Niq's Burger</h2>
         {!mobile && (
-          <ul className="nav-items">
+          <ul className='nav-items'>
             <NavComponents />
           </ul>
         )}
         {mobile && (
-          <div className="sidebar-toggle">
+          <div className='sidebar-toggle'>
             {sidebar ? (
               <Icons.FaTimes
-                className="sidebar-toggle-logo"
+                className='sidebar-toggle-logo'
                 onClick={() => setSidebar(!sidebar)}
               />
             ) : (
               <Icons.FaBars
-                className="sidebar-toggle-logo"
+                className='sidebar-toggle-logo'
                 onClick={() => setSidebar(!sidebar)}
               />
             )}
@@ -55,7 +55,7 @@ function Navbar() {
         )}
       </nav>
       <div className={sidebar ? 'sidebar active' : 'sidebar'}>
-        <ul className="sidebar-items">
+        <ul className='sidebar-items'>
           <NavComponents />
         </ul>
       </div>
