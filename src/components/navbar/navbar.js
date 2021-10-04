@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import * as Icons from 'react-icons/fa';
 import loginLogo from '../../assets/images/logocinza.gif';
 import './navbar.css';
-import { NavComponents} from '../navComponents/navComponents';
-
+import { NavComponents } from '../navComponents/navComponents';
 
 function Navbar() {
-  
   const [mobile, setMobile] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
@@ -35,10 +33,10 @@ function Navbar() {
       <nav className="navbar">
         <img src={loginLogo} alt="logo" />
         <h2 className="navbar-logo">Niq's Burger</h2>
-        {!mobile &&  (
+        {!mobile && (
           <ul className="nav-items">
-         <NavComponents />
-         </ul> 
+            <NavComponents />
+          </ul>
         )}
         {mobile && (
           <div className="sidebar-toggle">
@@ -58,7 +56,7 @@ function Navbar() {
       </nav>
       <div className={sidebar ? 'sidebar active' : 'sidebar'}>
         <ul className="sidebar-items">
-          <NavComponents/>
+          <NavComponents />
         </ul>
       </div>
     </>

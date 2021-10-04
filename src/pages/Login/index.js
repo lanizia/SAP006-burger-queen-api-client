@@ -1,54 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { post } from '../../api/api.js';
-import FormLogin from '../../components/login/formLogin.js';
-import './index.css'
+import FormLogin from '../../components/formLogin/formLogin.js';
+import '../pagesStyle/reset.css';
 
-
-const LoginPage =  () => {
+const LoginPage = () => {
   const [error, setError] = useState('');
   const history = useHistory();
 
   const redirectAfterLogin = (user) => {
-    if(user.role === 'waiter') {
-        history.push('/orders') 
-      }
+    if (user.role === 'waiter') {
+      history.push('/orders');
+    }
 
-      if(user.role === 'kitchen') {
-        history.push('/kitchen')
-      }
-  }
+    if (user.role === 'kitchen') {
+      history.push('/kitchen');
+    }
+  };
 
-  const Login = async data => {
+  const Login = async (data) => {
     try {
       const result = await post('/auth', data);
 
       localStorage.setItem('user', JSON.stringify(result));
-            
-      redirectAfterLogin(result);
 
-    } catch(e) {
-        console.log(e.code);
-        console.log(e.message);
-        setError('E-mail ou senha não preenchidos corretamente');
+      redirectAfterLogin(result);
+    } catch (e) {
+      console.log(e.code);
+      console.log(e.message);
+      setError('E-mail ou senha não preenchidos corretamente');
     }
-  }
+  };
 
   useEffect(() => {
     const localUser = localStorage.getItem('user');
 
-    if(localUser) {
+    if (localUser) {
       const user = JSON.parse(localUser);
 
-       redirectAfterLogin(user);
+      redirectAfterLogin(user);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    return (
-        <div className='AppLogin'>
-          <FormLogin Login={Login} error={error} />
-        </div>
-      );
-}
+  return (
+    <div className="AppLogin">
+      <FormLogin Login={Login} error={error} />
+    </div>
+  );
+};
 export default LoginPage;

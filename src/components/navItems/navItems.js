@@ -17,21 +17,4 @@ export const navItems = [
     sName: 'sidebar-item',
     icon: <Icons.FaFireAlt />,
   },
-
-//  {
-//     id: 3,
-//     title: 'Products',
-//     path: './products',
-//     nName: 'nav-item',
-//     sName: 'sidebar-item',
-//     icon: <Icons.FaCartArrowDown />,
-//   },
-//   {
-//     id: 4,
-//     title: 'Contact Us',
-//     path: './contactus',
-//     nName: 'nav-item',
-//     sName: 'sidebar-item',
-//     icon: <Icons.FaPhone />,
-//   },
 ];

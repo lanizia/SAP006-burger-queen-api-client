@@ -27,12 +27,12 @@ const FormLogin = ({ Login, error }) => {
             Email:
           </Label>
           <Input
-            inputType="email"
-            inputPlaceholder="exemplo@exemplo.com"
-            inputName="email"
+            type="email"
+            placeholder="exemplo@exemplo.com"
+            name="email"
             id="email"
-            inputOnChange={(e) => setData({ ...data, email: e.target.value })}
-            inputValue={data.email}
+            onChange={(e) => setData({ ...data, email: e.target.value })}
+            value={data.email}
           />
         </div>
         <div className="form-group">
@@ -40,14 +40,14 @@ const FormLogin = ({ Login, error }) => {
             Password:
           </Label>
           <Input
-            inputType="password"
-            inputPlaceholder="exemplo123"
-            inputName="password"
+            type="password"
+            placeholder="exemplo123"
+            name="password"
             id="password"
-            inputOnChange={(e) =>
+            onChange={(e) =>
               setData({ ...data, password: e.target.value })
             }
-            inputValue={data.password}
+            value={data.password}
           />
         </div>
         <Button type="submit" value="login" className="btn-submit">

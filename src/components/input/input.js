@@ -1,26 +1,26 @@
-import React from "react";
+import React from 'react';
 
-export function Input ({
-    inputType,
-    inputValue,
-    inputPlaceholder,
-    inputRequired,
-    inputClass,
-    inputOnChange,
-    inputName,
-    id
+export function Input({
+  type,
+  value,
+  placeholder,
+  required,
+  className,
+  onChange,
+  name,
+  id,
 }) {
-    return (
-        <input 
-            type={inputType}
-            value={inputValue}
-            placeholder={inputPlaceholder}
-            required={inputRequired}
-            className={inputClass}
-            onChange={inputOnChange}
-            name={inputName}
-            id={id} 
-            data-testid={`input-${id}`}/>
-    )
-    
+  return (
+    <input
+      type={type}
+      value={value}
+      placeholder={placeholder}
+      required={required}
+      className={className}
+      onChange={onChange}
+      name={name}
+      id={id}
+      data-testid={`input-${id}`}
+    />
+  );
 }
