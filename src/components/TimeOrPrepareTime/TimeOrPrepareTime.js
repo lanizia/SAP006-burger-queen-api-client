@@ -1,4 +1,4 @@
-import { getInterval, getTime } from '../time/getTime';
+import { getInterval, getTime } from '../Time/getTime';
 
 export const TimeOrPrepareTime = ({ order }) => {
   if (order.processedAt) {

@@ -15,7 +15,7 @@ export const NavComponents = () => {
 
   return (
     <>
-      {user.role === 'waiter' ?
+      {user && user.role === 'waiter' ?
         navItems.map((item) => {
           return (
             <li key={item.id} className={item.nName}>

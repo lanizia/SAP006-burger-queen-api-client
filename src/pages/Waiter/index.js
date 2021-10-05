@@ -1,6 +1,6 @@
 import Navbar from '../../components/navbar/navbar.js';
+import { OrdersList } from '../../components/OrdersList/ordersList';
 import '../pagesStyle/kitchenAndWaiter.css';
-import { OrdersList } from '../../components/ordersList/ordersList.js';
 
 const Waiter = () => {
   return (

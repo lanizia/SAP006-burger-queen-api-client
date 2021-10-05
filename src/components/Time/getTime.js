@@ -3,16 +3,13 @@ import { differenceInMinutes } from 'date-fns';
 export const getStatusLabel = (status) => {
   const map = {
     pending: 'Pendente',
+    ready: "Pronto",
+    delivered: "Pedido Entregue"
   };
   return map[status] || status;
 };
 
-export const getStatusLabelTwo = (status) => {
-  const map = {
-    pending: 'Pronto',
-  };
-  return map[status] || status;
-};
+
 
 export const getTime = (dateString) => {
   const date = new Date(dateString);

@@ -34,7 +34,7 @@ const DataClient = ({ data, setData, error }) => {
         min='1'
         max= '10'
         name='client-table'
-        className='client-name-input'
+        className='client-name-input-table'
         id='table'
         onChange={(e) => setData({ ...data, table: e.target.value })}
         value={data.table}
