@@ -1,4 +1,4 @@
-<img src="../assets/images/banner.jpg"  heigh="125" width="500">
+<img src="./assets/images/banner.jpg"  heigh="125" width="500">
 
 ## :round_pushpin: Índice
 
@@ -14,7 +14,7 @@
 
 Niq's burger é um pequeno restaurante de hambúrgueres, que está crescendo, e necessitava uma interface para realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
 
-<img src="../assets/images/banner-two.jpg"  heigh="125" width="500">
+<img src="./assets/images/banner-two.jpg"  heigh="125" width="500">
 
 O projeto foi realizado no _bootcamp_ da [LABORATÓRIA](https://www.laboratoria.la/br).
 Acesse aqui o [Niq's Burger](//colocarlink) :computer_mouse:
@@ -63,19 +63,19 @@ Por meio de gifs vamos demonstrar a usabilidade do nosso produto em formato Desk
 
 **Demonstração pagina de cadastro**
 
-<p align="center">  <img src="../assets/images/cadastro.gif" heigh="125" width="500" alt="gif-desktop-cadastro"> </p>
+<p align="center">  <img src="./assets/images/cadastro.gif" heigh="125" width="500" alt="gif-desktop-cadastro"> </p>
 
 **Demonstração login e menu**
 
-<p align="center">  <img src="../assets/images/login-menu.gif" heigh="125" width="500" alt="gif-desktop-login-menu"> </p>
+<p align="center">  <img src="./assets/images/login-menu.gif" heigh="125" width="500" alt="gif-desktop-login-menu"> </p>
 
 **Demonstração pedidos prontos tablet**
 
-<p align="center">  <img src="../assets/images/entregar.gif"  heigh="125" width="500" alt="gif-tablet-entregar-pedidos"> </p>
+<p align="center">  <img src="./assets/images/entregar.gif"  heigh="125" width="500" alt="gif-tablet-entregar-pedidos"> </p>
 
 **Demonstração funcionalidades cozinha tablet**
 
-<p align="center">  <img src="../assets/images/recebidos.gif" heigh="125" width="500" alt="gif-tablet-cozinha-recebidos"> </p>
+<p align="center">  <img src="./assets/images/recebidos.gif" heigh="125" width="500" alt="gif-tablet-cozinha-recebidos"> </p>
 
 ## 4. Experiência dos usuários :right_anger_bubble:
 
