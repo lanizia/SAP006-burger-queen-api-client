@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { get, put } from '../../api/api';
 import { Button } from '../button/button';
-import { getStatusLabel } from '../time/getTime.js';
-import { TimeOrPrepareTime } from '../timeOrPrepareTime/timeOrPrepareTime';
+import { getStatusLabel } from '../Time/getTime';
+import { TimeOrPrepareTime } from '../TimeOrPrepareTime/TimeOrPrepareTime';
 
 export const OrdersList = ({ showStatus, nextStatus, nextStatusLabel }) => {
   const [orders, setOrders] = useState([]);
@@ -46,7 +46,7 @@ export const OrdersList = ({ showStatus, nextStatus, nextStatusLabel }) => {
                 <p>{getStatusLabel(order.status)}</p>
                 <label className='orderLabel'>Itens:</label>
                 {order.Products.map((product) => (
-                  <p>
+                  <p key={`order-${order.id}-${product.id}`}>
                     {' '}
                     {product.qtd}x - {product.name}{' '}
                     {product.flavor ? ` tipo ${product.flavor};` : null}

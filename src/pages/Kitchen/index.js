@@ -1,6 +1,7 @@
 import Navbar from '../../components/navbar/navbar.js';
-import { OrdersList } from '../../components/ordersList/ordersList.js';
+import { OrdersList } from '../../components/OrdersList/ordersList.js';
 import '../pagesStyle/kitchenAndWaiter.css';
+
 const Kitchen = () => {
   return (
     <>
