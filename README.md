@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+<img src="../assets/images/banner.jpg"  heigh="125" width="500">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## :round_pushpin: Índice
 
-## Available Scripts
+- [1. Sobre o projeto](#1-sobre-o-projeto)
+- [2. Histórias de usuários](#2-histórias-de-usuários)
+- [3. Layout](#3-layout)
+- [4. Experiência dos usuários](#4-experiência-dos-usuários)
+- [5. Autoras](#5-autoras)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 1. Sobre o projeto :computer:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Niq's burger é um pequeno restaurante de hambúrgueres, que está crescendo, e necessitava uma interface para realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="../assets/images/banner-two.jpg"  heigh="125" width="500">
 
-### `npm test`
+O projeto foi realizado no _bootcamp_ da [LABORATÓRIA](https://www.laboratoria.la/br).
+Acesse aqui o [Niq's Burger](//colocarlink) :computer_mouse:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 2. Histórias de usuários :receipt:
 
-### `npm run build`
+Uma história do usuário é uma explicação informal e geral sobre um recurso de software escrita a partir da perspectiva do usuário final. Seu objetivo é articular como um recurso de software pode gerar valor para o cliente.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Primeira História de Usuário**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Eu, como admin quero cadastrar meus funcionarios.
+> Eu, como garçom/garçonete quero entrar no sistema de pedidos.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Segunda História de Usuário**
 
-### `npm run eject`
+> Eu como garçom/garçonete quero poder anotar o pedido de um cliente para não depender da minha memória, saber quanto cobrar e poder enviar os pedidos para a cozinha para serem preparados em ordem.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Terceira História de Usuário**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> Eu como chefe de cozinha quero ver os pedidos dos clientes em ordem, poder marcar que estão prontos e poder notificar os garçons/garçonetes que o pedido está pronto para ser entregue ao cliente.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Quarta História de Usuário**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes.
 
-## Learn More
+## 3. Layout :art:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Protótipo de baixa fidelidade :floppy_disk:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Um website nada mais é que um produto, dessa forma é muito importante o processo de construção do mesmo.
+Após as definições das necessidades dos usuários e pensando em sua experiencia com o produto, foram feitos os primeiros esboços dos esqueletos do site. Seguindo o requisito proposto pelo projeto, nosso Wireframe é considerado de Baixa Fidelidade, foi construido manualmente, com lápis e papel.
+Os desenhos foram feitos já pensando na responsividade da tela, e projetados primeiramente para Tablet.
+Abaixo temos um exemplo das telas de login e pedidos versão tablet.
 
-### Code Splitting
+<p align="center">  <img src="../assets/images/prototipo.jpeg" heigh="125" width="500" alt="wireframe"> </p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Paleta de cores :red_circle: :black_circle:
 
-### Analyzing the Bundle Size
+Para o layout, pensamos em uma paleta de cores que remete a modernidade, juventude e minimalismo. Com a preocupação de ser misturas equilibradas, o uso dos tons mais escuros, como as cores principais no feed permite explorar diferentes texturas e principalmente o balanço de luz e sombra. O tom amarelo facilita a identificação com Pura energia e alegria, simboliza a riqueza e estimula a criatividadee. O cinza, uma cor considerada neutra, transmite a sensação de solidez, formalidade e modernidade, além, claro, de ser um tom agradável.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img src="../assets/images/paleta.jpg" alt="Imagem com paleta de cores" heigh="125" width="500">
 
-### Making a Progressive Web App
+### Demonstração da Aplicação :file_folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Por meio de gifs vamos demonstrar a usabilidade do nosso produto em formato Desktop e, Tablet:
 
-### Advanced Configuration
+**Demonstração pagina de cadastro**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="center">  <img src="../assets/images/cadastro.gif" heigh="125" width="500" alt="gif-desktop-cadastro"> </p>
 
-### Deployment
+**Demonstração login e menu**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<p align="center">  <img src="../assets/images/login-menu.gif" heigh="125" width="500" alt="gif-desktop-login-menu"> </p>
 
-### `npm run build` fails to minify
+**Demonstração pedidos prontos tablet**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center">  <img src="../assets/images/entregar.gif"  heigh="125" width="500" alt="gif-tablet-entregar-pedidos"> </p>
+
+**Demonstração funcionalidades cozinha tablet**
+
+<p align="center">  <img src="../assets/images/recebidos.gif" heigh="125" width="500" alt="gif-tablet-cozinha-recebidos"> </p>
+
+## 4. Experiência dos usuários :right_anger_bubble:
+
+#### Testes de usabilidade
+
+A cada entrega de funcionalidade fizemos testes de usabilidade com alguns usuários. A partir desses testes verificamos a necessidade de melhoramos o design da aplicação, padronizando as fontes e cores do feed, proporcionando assim uma experência visual mais agradável para os usuários.
+
+## 7. Autoras :woman_technologist:
+
+### Lana Souza :woman_artist:
+
+[@lanizia](https://github.com/lanizia) [Linkedin](https://www.linkedin.com/in/monique-doretto/)
+
+### Monique :woman_artist:
+
+[@tenorionique](https://github.com/tenorionique) [Linkedin](https://www.linkedin.com/in/lanamsouza/)
+
+---
+
+Acesse aqui o [Niqs Burger](//colocarlink) :computer_mouse:
