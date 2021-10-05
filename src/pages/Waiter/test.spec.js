@@ -17,12 +17,13 @@ describe('Waiter', () => {
     render(
       <Router>
         {' '}
-        <Waiter  />{' '}
+        <Waiter />{' '}
       </Router>,
     );
 
-    const status = await waitFor(() => screen.getByText('Pronto'));
-
-    expect(status).toBeInTheDocument();
+    await waitFor(() => {
+      const status = screen.getByText('Pronto');
+      expect(status).toBeInTheDocument();
+    });
   });
 });

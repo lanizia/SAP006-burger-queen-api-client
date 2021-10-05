@@ -5,7 +5,6 @@ import { get } from '../../api/api';
 import Kitchen from './index.js';
 import { orders } from '../../mocks/orders';
 
-
 jest.mock('../../api/api');
 
 describe('Kitchen', () => {
@@ -22,9 +21,9 @@ describe('Kitchen', () => {
       </Router>,
     );
 
-    const client_name = await waitFor(() => screen.getByText('mia'));
-
-    expect(client_name).toBeInTheDocument();
+    await waitFor(() => {
+      const client_name = screen.getByText('mia');
+      expect(client_name).toBeInTheDocument();
+    });
   });
- 
 });
