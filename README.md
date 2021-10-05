@@ -1,4 +1,4 @@
-<img src="./assets/images/banner.jpg"  heigh="125" width="500">
+<img src=".img/banner.jpg"  heigh="125" width="500">
 
 ## :round_pushpin: Índice
 
@@ -14,7 +14,7 @@
 
 Niq's burger é um pequeno restaurante de hambúrgueres, que está crescendo, e necessitava uma interface para realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
 
-<img src="./assets/images/banner-two.jpg"  heigh="125" width="500">
+<img src="img/banner-two.jpg"  heigh="125" width="500">
 
 O projeto foi realizado no _bootcamp_ da [LABORATÓRIA](https://www.laboratoria.la/br).
 Acesse aqui o [Niq's Burger](//colocarlink) :computer_mouse:
@@ -49,13 +49,13 @@ Após as definições das necessidades dos usuários e pensando em sua experienc
 Os desenhos foram feitos já pensando na responsividade da tela, e projetados primeiramente para Tablet.
 Abaixo temos um exemplo das telas de login e pedidos versão tablet.
 
-<p align="center">  <img src="../assets/images/prototipo.jpeg" heigh="125" width="500" alt="wireframe"> </p>
+<p align="center">  <img src="img/prototipo.jpeg" heigh="125" width="500" alt="wireframe"> </p>
 
 ### Paleta de cores :red_circle: :black_circle:
 
 Para o layout, pensamos em uma paleta de cores que remete a modernidade, juventude e minimalismo. Com a preocupação de ser misturas equilibradas, o uso dos tons mais escuros, como as cores principais no feed permite explorar diferentes texturas e principalmente o balanço de luz e sombra. O tom amarelo facilita a identificação com Pura energia e alegria, simboliza a riqueza e estimula a criatividadee. O cinza, uma cor considerada neutra, transmite a sensação de solidez, formalidade e modernidade, além, claro, de ser um tom agradável.
 
-<img src="../assets/images/paleta.jpg" alt="Imagem com paleta de cores" heigh="125" width="500">
+<img src="img/paleta.jpg" alt="Imagem com paleta de cores" heigh="125" width="500">
 
 ### Demonstração da Aplicação :file_folder:
 
@@ -63,19 +63,19 @@ Por meio de gifs vamos demonstrar a usabilidade do nosso produto em formato Desk
 
 **Demonstração pagina de cadastro**
 
-<p align="center">  <img src="./assets/images/cadastro.gif" heigh="125" width="500" alt="gif-desktop-cadastro"> </p>
+<p align="center">  <img src="img/cadastro.gif" heigh="125" width="500" alt="gif-desktop-cadastro"> </p>
 
 **Demonstração login e menu**
 
-<p align="center">  <img src="./assets/images/login-menu.gif" heigh="125" width="500" alt="gif-desktop-login-menu"> </p>
+<p align="center">  <img src="img/login-menu.gif" heigh="125" width="500" alt="gif-desktop-login-menu"> </p>
 
 **Demonstração pedidos prontos tablet**
 
-<p align="center">  <img src="./assets/images/entregar.gif"  heigh="125" width="500" alt="gif-tablet-entregar-pedidos"> </p>
+<p align="center">  <img src="img/entregar.gif"  heigh="125" width="500" alt="gif-tablet-entregar-pedidos"> </p>
 
 **Demonstração funcionalidades cozinha tablet**
 
-<p align="center">  <img src="./assets/images/recebidos.gif" heigh="125" width="500" alt="gif-tablet-cozinha-recebidos"> </p>
+<p align="center">  <img src="img/recebidos.gif" heigh="125" width="500" alt="gif-tablet-cozinha-recebidos"> </p>
 
 ## 4. Experiência dos usuários :right_anger_bubble:
 
