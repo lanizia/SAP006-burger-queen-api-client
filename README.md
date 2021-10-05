@@ -1,4 +1,4 @@
-<img src=".img/banner.jpg"  heigh="125" width="500">
+<img src="img/banner.jpg"  heigh="125" width="500">
 
 ## :round_pushpin: Índice
 
