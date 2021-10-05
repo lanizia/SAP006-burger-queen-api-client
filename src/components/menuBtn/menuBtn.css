@@ -18,3 +18,10 @@
   color: #ffff;
   margin-left: 78px;
 }
+
+@media (min-width: 600px), (max-width: 800px) {
+  .btn-menu-breakfast,
+  .btn-other-menu {
+    margin-left: 10px;
+  }
+}
