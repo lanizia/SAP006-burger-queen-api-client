@@ -17,7 +17,17 @@ Niq's burger é um pequeno restaurante de hambúrgueres, que está crescendo, e 
 <img src="img/banner-two.jpg"  heigh="125" width="500">
 
 O projeto foi realizado no _bootcamp_ da [LABORATÓRIA](https://www.laboratoria.la/br).
-Acesse aqui o [Niq's Burger](//colocarlink) :computer_mouse:
+Acesse aqui o [Niq's Burger](https://niqsburger.netlify.app/) :computer_mouse:
+
+Já fornecemos o Login para você:
+
+Para logar como cozinheiro:
+email: tartaruga@ninja.com
+senha: 1234567
+
+Para logar como garçom:
+email: tteste@exemplo.com
+senha: 1234567
 
 ## 2. Histórias de usuários :receipt:
 
@@ -95,4 +105,4 @@ A cada entrega de funcionalidade fizemos testes de usabilidade com alguns usuár
 
 ---
 
-Acesse aqui o [Niqs Burger](//colocarlink) :computer_mouse:
+Acesse aqui o [Niqs Burger](https://niqsburger.netlify.app/)) :computer_mouse:
